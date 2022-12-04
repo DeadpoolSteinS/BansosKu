@@ -1,5 +1,6 @@
 import 'package:bansosku/auth/signin/signin_screen.dart';
 import 'package:bansosku/auth/signin/signup_screen.dart';
+import 'package:bansosku/pages/notifikasi/notifikasi_screen.dart';
 import 'package:flutter/material.dart';
 
 Route<dynamic> generateRoute(RouteSettings routeSettings) {
@@ -13,6 +14,11 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
       return MaterialPageRoute(
         settings: routeSettings,
         builder: (_) => const SignupScreen(),
+      );
+    case NotifikasiScreen.routeName:
+      return MaterialPageRoute(
+        settings: routeSettings,
+        builder: (_) => const NotifikasiScreen(),
       );
     default:
       return MaterialPageRoute(

@@ -26,12 +26,7 @@ class ProfileScreen extends StatelessWidget {
           ),
           SafeArea(
             child: Container(
-              padding: const EdgeInsets.only(
-                top: 32,
-                right: 32,
-                bottom: 16,
-                left: 32,
-              ),
+              padding: const EdgeInsets.all(32),
               child: Column(
                 children: [
                   Row(

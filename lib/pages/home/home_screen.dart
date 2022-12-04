@@ -1,6 +1,7 @@
 import 'package:bansosku/constants/my_colors.dart';
 import 'package:bansosku/pages/home/components/feature_card.dart';
 import 'package:bansosku/pages/home/components/news_card.dart';
+import 'package:bansosku/pages/notifikasi/notifikasi_screen.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -62,8 +63,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.end,
-                              children: const [
-                                Text(
+                              children: [
+                                const Text(
                                   "Hi, Klaus Syariah",
                                   style: TextStyle(
                                     color: Colors.white,
@@ -71,10 +72,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                     fontSize: 23,
                                   ),
                                 ),
-                                Icon(
-                                  Icons.notifications_none,
-                                  color: Colors.white,
-                                  size: 32,
+                                InkWell(
+                                  onTap: () {
+                                    Navigator.pushNamed(
+                                      context,
+                                      NotifikasiScreen.routeName,
+                                    );
+                                  },
+                                  child: const Icon(
+                                    Icons.notifications_none,
+                                    color: Colors.white,
+                                    size: 32,
+                                  ),
                                 )
                               ],
                             ),
