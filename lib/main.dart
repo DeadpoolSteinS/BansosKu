@@ -1,5 +1,7 @@
+import 'package:bansosku/auth/signin/signin_screen.dart';
 import 'package:bansosku/bottom_bar.dart';
 import 'package:bansosku/constants/my_colors.dart';
+import 'package:bansosku/router.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,8 +20,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: MyColors.primaryBg,
+        textTheme: Theme.of(context).textTheme.apply(
+              bodyColor: MyColors.primaryText,
+            ),
       ),
-      home: const BottomBar(),
+      onGenerateRoute: (settings) => generateRoute(settings),
+      home: const SigninScreen(),
     );
   }
 }

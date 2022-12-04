@@ -52,7 +52,7 @@ class _BottomBarState extends State<BottomBar> {
         ],
         currentIndex: _page,
         elevation: 4,
-        selectedItemColor: MyColors.primaryText,
+        selectedItemColor: MyColors.primaryGreen,
         onTap: updatePage,
       ),
     );
