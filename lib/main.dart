@@ -1,4 +1,3 @@
-import 'package:bansosku/auth/signin/signin_screen.dart';
 import 'package:bansosku/bottom_bar.dart';
 import 'package:bansosku/constants/my_colors.dart';
 import 'package:bansosku/router.dart';
@@ -25,7 +24,7 @@ class MyApp extends StatelessWidget {
             ),
       ),
       onGenerateRoute: (settings) => generateRoute(settings),
-      home: const SigninScreen(),
+      home: const BottomBar(),
     );
   }
 }
