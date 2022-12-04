@@ -1,4 +1,5 @@
-import 'package:bansosku/pages/home_screen.dart';
+import 'package:bansosku/bottom_bar.dart';
+import 'package:bansosku/constants/my_colors.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,11 +13,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'BansosKu',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: MyColors.primaryBg,
       ),
-      home: const HomeScreen(),
+      home: const BottomBar(),
     );
   }
 }
