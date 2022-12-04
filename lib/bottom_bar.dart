@@ -1,5 +1,6 @@
 import 'package:bansosku/constants/my_colors.dart';
 import 'package:bansosku/pages/home/home_screen.dart';
+import 'package:bansosku/pages/informasi/informasi_screen.dart';
 import 'package:bansosku/pages/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class _BottomBarState extends State<BottomBar> {
   List<Widget> listPage = [
     const HomeScreen(),
     const Scaffold(),
-    const Scaffold(),
+    const InformarsiScreen(),
     const ProfileScreen(),
   ];
 
