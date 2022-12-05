@@ -1,4 +1,3 @@
-import 'package:bansosku/constants/my_colors.dart';
 import 'package:bansosku/pages/informasi/components/informasi_card.dart';
 import 'package:flutter/material.dart';
 
