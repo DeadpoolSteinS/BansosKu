@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 class CustomTextfield extends StatelessWidget {
   final String label;
   final String hint;
+  // final String textAlignment;
 
   const CustomTextfield({
     super.key,
     required this.label,
     required this.hint,
+    // required this.textAlignment
   });
 
   @override
@@ -18,6 +20,7 @@ class CustomTextfield extends StatelessWidget {
       children: [
         Text(
           label,
+          textAlign: TextAlign.center,
           style: const TextStyle(
             color: MyColors.primaryGreen,
             fontSize: 18,
