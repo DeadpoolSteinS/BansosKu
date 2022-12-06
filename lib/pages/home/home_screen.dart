@@ -2,6 +2,7 @@ import 'package:bansosku/constants/my_colors.dart';
 import 'package:bansosku/pages/home/components/feature_card.dart';
 import 'package:bansosku/pages/home/components/news_card.dart';
 import 'package:bansosku/pages/notifikasi/notifikasi_screen.dart';
+import 'package:bansosku/pages/salurkan/salurkan_screen.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -118,6 +119,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                     label: "Informasi\nBansos",
                                     bgColor: const Color(0xff154E5E),
                                     image: "feature1.png",
+                                    onClick: () {
+                                      Navigator.pushNamed(
+                                        context,
+                                        SalurkanScreen.routeName,
+                                      );
+                                    },
                                   ),
                                   const SizedBox(width: 16),
                                   FeatureCard(
@@ -125,6 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     label: "Riwayat",
                                     bgColor: const Color(0xffF8C64F),
                                     image: "feature2.png",
+                                    onClick: () {},
                                   ),
                                   const SizedBox(width: 16),
                                   FeatureCard(
@@ -132,6 +140,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     label: "Walil-kan",
                                     bgColor: const Color(0xffFFFFFF),
                                     image: "feature3.png",
+                                    onClick: () {},
                                   ),
                                 ],
                               ),
@@ -142,18 +151,21 @@ class _HomeScreenState extends State<HomeScreen> {
                                     cardWidth: cardWidth,
                                     label: "Fitur\nLainnya",
                                     image: "feature3.png",
+                                    onClick: () {},
                                   ),
                                   const SizedBox(width: 16),
                                   FeatureCard(
                                     cardWidth: cardWidth,
                                     label: "Fitur\nLainnya",
                                     image: "feature1.png",
+                                    onClick: () {},
                                   ),
                                   const SizedBox(width: 16),
                                   FeatureCard(
                                     cardWidth: cardWidth,
                                     label: "Fitur\nLainnya",
                                     image: "feature2.png",
+                                    onClick: () {},
                                   ),
                                 ],
                               ),
