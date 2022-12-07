@@ -1,5 +1,6 @@
 import 'package:bansosku/constants/my_colors.dart';
 import 'package:bansosku/pages/home/home_screen.dart';
+import 'package:bansosku/pages/home/home_screen_penerima.dart';
 import 'package:bansosku/pages/informasi/informasi_screen.dart';
 import 'package:bansosku/pages/profile/profile_screen.dart';
 import 'package:bansosku/pages/scan/scan_page.dart';
@@ -18,7 +19,7 @@ class _BottomBarState extends State<BottomBar> {
   int _page = 0;
 
   List<Widget> listPage = [
-    const ScanScreen(),
+    const HomeScreenPenerima(),
     const Scaffold(),
     const InformarsiScreen(),
     const ProfileScreen(),
