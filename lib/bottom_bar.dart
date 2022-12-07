@@ -2,6 +2,7 @@ import 'package:bansosku/constants/my_colors.dart';
 import 'package:bansosku/pages/home/home_screen.dart';
 import 'package:bansosku/pages/informasi/informasi_screen.dart';
 import 'package:bansosku/pages/profile/profile_screen.dart';
+import 'package:bansosku/pages/scan/scan_page.dart';
 import 'package:bansosku/pages/success/semoga_bermanfaat.dart';
 // import 'package:bansosku/auth/signin/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class _BottomBarState extends State<BottomBar> {
   int _page = 0;
 
   List<Widget> listPage = [
-    const SemogaBermanfaat(),
+    const ScanScreen(),
     const Scaffold(),
     const InformarsiScreen(),
     const ProfileScreen(),
