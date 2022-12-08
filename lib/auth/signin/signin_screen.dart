@@ -1,4 +1,5 @@
 import 'package:bansosku/auth/signin/signup_screen.dart';
+import 'package:bansosku/bottom_bar.dart';
 import 'package:bansosku/common/custom_button.dart';
 import 'package:bansosku/common/custom_textfield.dart';
 import 'package:bansosku/constants/my_colors.dart';
@@ -48,17 +49,30 @@ class SigninScreen extends StatelessWidget {
                   Row(
                     children: [
                       CustomButton(
-                        text: "Email",
                         width:
                             (MediaQuery.of(context).size.width - 64) / 2 - 10,
+                        onTap: () {},
+                        child: const Text(
+                          'Email',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
                       ),
                       const SizedBox(width: 20),
                       CustomButton(
-                        text: "No. Handphone",
                         width:
                             (MediaQuery.of(context).size.width - 64) / 2 - 10,
                         bgColor: Colors.white,
-                        textColor: MyColors.primaryGreen,
+                        onTap: () {},
+                        child: const Text(
+                          'No. Handphone',
+                          style: TextStyle(
+                            color: MyColors.primaryGreen,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
                       ),
                     ],
                   ),
@@ -73,8 +87,21 @@ class SigninScreen extends StatelessWidget {
                     hint: "********",
                   ),
                   const SizedBox(height: 44),
-                  const CustomButton(
-                    text: "Masuk",
+                  CustomButton(
+                    onTap: () {
+                      Navigator.pushNamedAndRemoveUntil(
+                        context,
+                        BottomBar.routeName,
+                        (route) => false,
+                      );
+                    },
+                    child: const Text(
+                      'Masuk',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
                   ),
                   const SizedBox(height: 12),
                   Row(

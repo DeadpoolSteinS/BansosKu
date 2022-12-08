@@ -107,8 +107,15 @@ class SignupScreen extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 32),
-                  const CustomButton(
-                    text: "Daftar",
+                  CustomButton(
+                    onTap: () {},
+                    child: const Text(
+                      'Daftar',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
                   ),
                   const SizedBox(height: 12),
                   Row(

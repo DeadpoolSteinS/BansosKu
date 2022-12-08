@@ -1,11 +1,12 @@
 import 'package:bansosku/common/custom_appbar.dart';
-import 'package:bansosku/common/custom_button.dart';
+import 'package:bansosku/common/custom_button2.dart';
 import 'package:bansosku/common/custom_textfield2.dart';
+import 'package:bansosku/pages/alamat/alamat_screen.dart';
 import 'package:flutter/material.dart';
 
-class SalurkanScreen extends StatelessWidget {
-  static const String routeName = '/salurkan-bantuanmu';
-  const SalurkanScreen({super.key});
+class TujuanScreen extends StatelessWidget {
+  static const String routeName = '/tujuan-bansos';
+  const TujuanScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +66,15 @@ class SalurkanScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const CustomButton(text: "Selanjutnya"),
+                    CustomButton2(
+                      text: "Selanjutnya",
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,
+                          AlamatScreen.routeName,
+                        );
+                      },
+                    ),
                   ],
                 ),
               ),

@@ -54,12 +54,6 @@ class CustomTextfield extends StatelessWidget {
                 borderRadius: BorderRadius.circular(30),
               ),
             ),
-            validator: (val) {
-              if (val == null || val.isEmpty) {
-                return 'Enter your email';
-              }
-              return null;
-            },
             maxLines: 1,
           ),
         ),

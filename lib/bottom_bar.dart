@@ -5,6 +5,7 @@ import 'package:bansosku/pages/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 
 class BottomBar extends StatefulWidget {
+  static const String routeName = '/home';
   const BottomBar({super.key});
 
   @override
