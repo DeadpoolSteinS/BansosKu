@@ -1,4 +1,3 @@
-import 'package:bansosku/bottom_bar.dart';
 import 'package:bansosku/constants/my_colors.dart';
 import 'package:bansosku/pages/landing_page/landing_page_screen.dart';
 import 'package:bansosku/router.dart';
