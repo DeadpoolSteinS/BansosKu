@@ -1,17 +1,6 @@
 import 'package:bansosku/common/custom_textfield_empty.dart';
 import 'package:bansosku/constants/my_colors.dart';
-import 'package:bansosku/pages/notifikasi/components/notifikasi_card.dart';
 import 'package:flutter/material.dart';
-
-import 'package:bansosku/constants/my_colors.dart';
-import 'package:bansosku/pages/home/components/feature_card.dart';
-import 'package:bansosku/pages/home/components/news_card.dart';
-import 'package:bansosku/pages/notifikasi/notifikasi_screen.dart';
-import 'package:bansosku/pages/salurkan/salurkan_screen.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/material.dart';
-
-import '../../common/custom_textfield.dart';
 
 class ScanScreen extends StatelessWidget {
   static const String routeName = '/notifikasi';
@@ -52,8 +41,8 @@ class ScanScreen extends StatelessWidget {
                       children: [
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const SizedBox(height: 50),
+                          children: const [
+                            SizedBox(height: 50),
                             Center(
                               child: Text(
                                 "Scan QR Code",
@@ -100,12 +89,12 @@ class ScanScreen extends StatelessWidget {
             children: [
               Container(
                 width: MediaQuery.of(context).size.width,
-                padding: EdgeInsets.all(20.0),
+                padding: const EdgeInsets.all(20.0),
                 height: 200,
                 decoration: BoxDecoration(
                   color: MyColors.primaryGreen,
                   borderRadius: BorderRadius.circular(9),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: Colors.black26,
                       blurRadius: 4,
@@ -115,7 +104,7 @@ class ScanScreen extends StatelessWidget {
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                  children: const [
                     Text(
                       "Tidak bisa scan ?",
                       style: TextStyle(
@@ -138,7 +127,7 @@ class ScanScreen extends StatelessWidget {
                         fontSize: 12,
                       ),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 20,
                     ),
                     Center(

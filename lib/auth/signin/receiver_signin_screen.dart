@@ -1,4 +1,3 @@
-import 'package:bansosku/auth/signin/signup_screen.dart';
 import 'package:bansosku/common/custom_button.dart';
 import 'package:bansosku/common/custom_textfield.dart';
 import 'package:bansosku/constants/my_colors.dart';
@@ -51,8 +50,11 @@ class ReceiverSigninScreen extends StatelessWidget {
                     hint: "3279282929291029",
                   ),
                   const SizedBox(height: 44),
-                  const CustomButton(
-                    text: "Masuk",
+                  CustomButton(
+                    onTap: () {},
+                    child: const Text(
+                      'Masuk',
+                    ),
                   ),
                   const SizedBox(height: 12),
                 ],

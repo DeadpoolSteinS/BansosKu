@@ -1,6 +1,4 @@
-import 'package:bansosku/auth/signin/signup_screen.dart';
 import 'package:bansosku/common/custom_button.dart';
-import 'package:bansosku/common/custom_textfield.dart';
 import 'package:bansosku/constants/my_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -52,32 +50,29 @@ class SemogaBermanfaat extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                          height: 46,
-                          width: 10,
+                        height: 46,
+                        width: 10,
                       ),
                       Center(
                         child: Text(
                           'Bantuan sudah diterima oleh Wahyu',
                           style: TextStyle(
-                              color: MyColors.primaryGreen,
-                              fontSize: 16
-                          ),
+                              color: MyColors.primaryGreen, fontSize: 16),
                         ),
                       ),
                       Center(
                         child: Text(
                           'semoga berkah dan bermanfaat',
                           style: TextStyle(
-                              color: MyColors.primaryGreen,
-                              fontSize: 16
-                          ),
+                              color: MyColors.primaryGreen, fontSize: 16),
                         ),
                       )
                     ],
                   ),
                   const SizedBox(height: 50),
-                  const CustomButton(
-                    text: "Beranda",
+                  CustomButton(
+                    onTap: () {},
+                    child: const Text("Beranda"),
                   ),
                   const SizedBox(height: 12),
                 ],
