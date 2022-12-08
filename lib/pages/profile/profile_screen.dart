@@ -1,3 +1,5 @@
+import 'package:bansosku/auth/signin/signin_screen.dart';
+import 'package:bansosku/common/custom_button2.dart';
 import 'package:bansosku/constants/my_colors.dart';
 import 'package:bansosku/pages/profile/components/profile_option.dart';
 import 'package:flutter/material.dart';
@@ -41,9 +43,17 @@ class ProfileScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const Icon(
-                        Icons.logout,
-                        color: Colors.white,
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(
+                            context,
+                            SigninScreen.routeName,
+                          );
+                        },
+                        child: const Icon(
+                          Icons.logout,
+                          color: Colors.white,
+                        ),
                       ),
                     ],
                   ),
@@ -119,29 +129,9 @@ class ProfileScreen extends StatelessWidget {
                               ],
                             ),
                             const SizedBox(height: 12),
-                            SizedBox(
-                              width: double.infinity,
-                              height: 48,
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  shape: RoundedRectangleBorder(
-                                    side: const BorderSide(
-                                      color: MyColors.primaryGreen,
-                                      width: 2,
-                                    ),
-                                    borderRadius: BorderRadius.circular(30),
-                                  ),
-                                  backgroundColor: MyColors.primaryBg,
-                                ),
-                                onPressed: () {},
-                                child: const Text(
-                                  "Edit Profile",
-                                  style: TextStyle(
-                                    color: MyColors.primaryGreen,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
+                            CustomButton2(
+                              text: "Edit Profile",
+                              onTap: () {},
                             ),
                           ],
                         ),

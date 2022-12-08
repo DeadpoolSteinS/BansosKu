@@ -2,8 +2,11 @@ import 'package:bansosku/constants/my_colors.dart';
 import 'package:bansosku/pages/home/components/feature_card.dart';
 import 'package:bansosku/pages/home/components/news_card.dart';
 import 'package:bansosku/pages/notifikasi/notifikasi_screen.dart';
+<<<<<<< HEAD
 import 'package:bansosku/pages/riwayat/riwayat_screen.dart';
 import 'package:bansosku/pages/salurkan/salurkan_screen.dart';
+=======
+>>>>>>> f0bcb7ec2240cd7b69934e4970d357eec46ad452
 import 'package:bansosku/pages/scan/scan_page.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -137,8 +140,9 @@ class _HomeScreenState extends State<HomeScreenPenerima> {
                                     child: Row(
                                       children: [
                                         Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: const [
                                             Text(
                                               "Terima Bantuan?",
                                               style: TextStyle(
@@ -161,7 +165,9 @@ class _HomeScreenState extends State<HomeScreenPenerima> {
                                           onTap: () {
                                             Navigator.push(
                                               context,
-                                              MaterialPageRoute(builder: (context) => const ScanScreen()),
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const ScanScreen()),
                                             );
                                           },
                                           child: Container(
@@ -169,7 +175,8 @@ class _HomeScreenState extends State<HomeScreenPenerima> {
                                             height: cardWidth,
                                             decoration: BoxDecoration(
                                               color: const Color(0xffD9D9D9),
-                                              borderRadius: BorderRadius.circular(10),
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
                                               boxShadow: const [
                                                 BoxShadow(
                                                   color: Colors.black26,
@@ -177,8 +184,9 @@ class _HomeScreenState extends State<HomeScreenPenerima> {
                                                   offset: Offset(0, 4),
                                                 )
                                               ],
-                                              image: DecorationImage(
-                                                image: AssetImage("assets/qrcode.png"),
+                                              image: const DecorationImage(
+                                                image: AssetImage(
+                                                    "assets/qrcode.png"),
                                               ),
                                             ),
                                           ),

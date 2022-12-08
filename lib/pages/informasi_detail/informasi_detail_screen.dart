@@ -1,6 +1,7 @@
 import 'package:bansosku/common/custom_appbar.dart';
 import 'package:bansosku/common/custom_unorder_list.dart';
 import 'package:bansosku/constants/my_colors.dart';
+import 'package:bansosku/pages/ajukan_bansos_form/ajukan_bansos_form_screen.dart';
 import 'package:flutter/material.dart';
 
 class InformasiDetailScreen extends StatelessWidget {
@@ -212,7 +213,12 @@ class InformasiDetailScreen extends StatelessWidget {
                                     ),
                                     backgroundColor: MyColors.primaryBg,
                                   ),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.pushNamed(
+                                      context,
+                                      AjukanBansosFormScreen.routeName,
+                                    );
+                                  },
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [

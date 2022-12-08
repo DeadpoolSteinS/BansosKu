@@ -1,7 +1,7 @@
-import 'package:bansosku/constants/my_colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextfieldEmpty extends StatelessWidget {
+  const CustomTextfieldEmpty({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class CustomTextfieldEmpty extends StatelessWidget {
               )
             ],
           ),
-          margin: EdgeInsets.fromLTRB(30, 0, 30, 0),
+          margin: const EdgeInsets.fromLTRB(30, 0, 30, 0),
           child: TextFormField(
             decoration: InputDecoration(
               contentPadding: const EdgeInsets.symmetric(horizontal: 20),

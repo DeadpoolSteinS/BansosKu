@@ -2,9 +2,9 @@ import 'package:bansosku/common/custom_textfield_empty.dart';
 import 'package:bansosku/constants/my_colors.dart';
 import 'package:flutter/material.dart';
 
-class ScanScreen extends StatelessWidget {
+class CriteriaScreen extends StatelessWidget {
   static const String routeName = '/notifikasi';
-  const ScanScreen({super.key});
+  const CriteriaScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
