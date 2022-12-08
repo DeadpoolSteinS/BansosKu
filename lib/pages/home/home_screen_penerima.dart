@@ -2,7 +2,10 @@ import 'package:bansosku/constants/my_colors.dart';
 import 'package:bansosku/pages/home/components/feature_card.dart';
 import 'package:bansosku/pages/home/components/news_card.dart';
 import 'package:bansosku/pages/notifikasi/notifikasi_screen.dart';
+
 import 'package:bansosku/pages/riwayat/riwayat_screen.dart';
+// import 'package:bansosku/pages/salurkan/salurkan_screen.dart';
+
 import 'package:bansosku/pages/scan/scan_page.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';

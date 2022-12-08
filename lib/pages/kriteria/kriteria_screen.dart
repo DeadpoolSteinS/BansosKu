@@ -3,7 +3,7 @@ import 'package:bansosku/constants/my_colors.dart';
 import 'package:flutter/material.dart';
 
 class CriteriaScreen extends StatelessWidget {
-  static const String routeName = '/notifikasi';
+  static const String routeName = '/criteria';
   const CriteriaScreen({super.key});
 
   @override
