@@ -203,6 +203,10 @@ class _HomeScreenState extends State<HomeScreenPenerima> {
                                     label: "Peduli &\nSalurkan",
                                     image: "feature1.png",
                                     onClick: () {
+                                      // Navigator.push(
+                                      //   context,
+                                      //   MaterialPageRoute(builder: (context) => const SalurkanScreen()),
+                                      // );
                                     },
                                   ),
                                   const SizedBox(width: 16),
@@ -213,7 +217,9 @@ class _HomeScreenState extends State<HomeScreenPenerima> {
                                     onClick: () {
                                       Navigator.push(
                                         context,
-                                        MaterialPageRoute(builder: (context) => const HistoryScreen()),
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const HistoryScreen()),
                                       );
                                     },
                                   ),

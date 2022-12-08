@@ -2,20 +2,22 @@ import 'package:bansosku/constants/my_colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton2 extends StatelessWidget {
-  final String text;
+  final Widget child;
   final VoidCallback onTap;
+  final double height;
 
   const CustomButton2({
     super.key,
-    required this.text,
+    required this.child,
     required this.onTap,
+    this.height = 48,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 48,
+      height: height,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
@@ -28,13 +30,7 @@ class CustomButton2 extends StatelessWidget {
           backgroundColor: MyColors.primaryBg,
         ),
         onPressed: onTap,
-        child: Text(
-          text,
-          style: const TextStyle(
-            color: MyColors.primaryGreen,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+        child: child,
       ),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:bansosku/common/custom_appbar.dart';
 import 'package:bansosku/common/custom_button2.dart';
-import 'package:bansosku/common/custom_textfield2.dart';
+import 'package:bansosku/common/custom_textfield4.dart';
+import 'package:bansosku/constants/my_colors.dart';
 import 'package:bansosku/pages/alamat/alamat_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -21,59 +22,70 @@ class TujuanScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     Expanded(
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              Container(
-                                width: 30,
-                                height: 30,
-                                decoration: const BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage("assets/fluent.png"),
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                Container(
+                                  width: 30,
+                                  height: 30,
+                                  decoration: const BoxDecoration(
+                                    image: DecorationImage(
+                                      image: AssetImage("assets/fluent.png"),
+                                    ),
                                   ),
                                 ),
-                              ),
-                              const Text(
-                                "Tujuan Bansos",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              )
-                            ],
-                          ),
-                          const SizedBox(height: 8),
-                          const CustomTextfield2(
-                            label: "Tujuan",
-                            hint: "Masukkan tujuan pengiriman bantuan sosial",
-                          ),
-                          const SizedBox(height: 8),
-                          const CustomTextfield2(
-                            label: "Pesan",
-                            hint: "Masukan pesan untuk penerima bantuan sosial",
-                          ),
-                          const SizedBox(height: 8),
-                          const CustomTextfield2(
-                            label: "Tema",
-                            hint: "Masukan tema penyaluran bantuan sosial",
-                          ),
-                          const SizedBox(height: 8),
-                          const CustomTextfield2(
-                            label: "Jargon",
-                            hint: "Masukan jargon bantuan sosial",
-                          ),
-                        ],
+                                const Text(
+                                  "Tujuan Bansos",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                )
+                              ],
+                            ),
+                            const SizedBox(height: 8),
+                            const CustomTextfield4(
+                              label: "Tujuan",
+                              hint: "Masukkan tujuan pengiriman bantuan sosial",
+                            ),
+                            const SizedBox(height: 8),
+                            const CustomTextfield4(
+                              label: "Pesan",
+                              hint:
+                                  "Masukan pesan untuk penerima bantuan sosial",
+                              maxLine: 5,
+                            ),
+                            const SizedBox(height: 8),
+                            const CustomTextfield4(
+                              label: "Tema",
+                              hint: "Masukan tema penyaluran bantuan sosial",
+                            ),
+                            const SizedBox(height: 8),
+                            const CustomTextfield4(
+                              label: "Jargon",
+                              hint: "Masukan jargon bantuan sosial",
+                            ),
+                          ],
+                        ),
                       ),
                     ),
+                    const SizedBox(height: 16),
                     CustomButton2(
-                      text: "Selanjutnya",
                       onTap: () {
                         Navigator.pushNamed(
                           context,
                           AlamatScreen.routeName,
                         );
                       },
+                      child: const Text(
+                        "Selanjutnya",
+                        style: TextStyle(
+                          color: MyColors.primaryGreen,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                   ],
                 ),

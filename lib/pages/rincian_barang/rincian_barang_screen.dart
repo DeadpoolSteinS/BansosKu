@@ -53,7 +53,7 @@ class RincianBarangScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Text(
+                      const Text(
                         "Riwayat",
                         style: TextStyle(
                           color: Colors.white,
@@ -71,34 +71,35 @@ class RincianBarangScreen extends StatelessWidget {
             padding: const EdgeInsets.all(32),
             child: Column(
               children: [
-                RincianBarangCard(
+                const RincianBarangCard(
                   date: "6 Desember 2022",
                   institusi: "Kemakom",
                   headline: "1 Paket Sembako untuk pa Wahyu",
                 ),
-                SizedBox(height: 16),
-                RincianBarangCard(
+                const SizedBox(height: 16),
+                const RincianBarangCard(
                   date: "6 Desember 2022",
                   institusi: "Kemakom",
                   headline: "1 Paket Sembako untuk pa Wahyu",
                 ),
-                // InkWell(
-                //   onTap: () {
-                //     Navigator.push(
-                //       context,
-                //       MaterialPageRoute(builder: (context) => const SemogaBermanfaat()),
-                //     );
-                //   },
-                //   child: const CustomButton(
-                //     text: "Selesai",
-                //     onPressed: () {
-                //       Navigator.push(
-                //         context,
-                //         MaterialPageRoute(builder: (context) => const SemogaBermanfaat()),
-                //       );
-                //     },
-                //   ),
-                // )
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SemogaBermanfaat()),
+                    );
+                  },
+                  child: CustomButton(
+                    onTap: () {
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(builder: (context) => const SemogaBermanfaat()),
+                      // );
+                    },
+                    child: const Text("Selesai"),
+                  ),
+                )
               ],
             ),
           ),
