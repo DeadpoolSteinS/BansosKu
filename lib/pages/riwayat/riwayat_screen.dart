@@ -1,5 +1,4 @@
 import 'package:bansosku/constants/my_colors.dart';
-import 'package:bansosku/pages/rincian_barang/rincian_barang_screen.dart';
 import 'package:bansosku/pages/riwayat/components/riwayat_card.dart';
 import 'package:flutter/material.dart';
 
@@ -51,7 +50,7 @@ class HistoryScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Text(
+                      const Text(
                         "Riwayat",
                         style: TextStyle(
                           color: Colors.white,
@@ -68,7 +67,7 @@ class HistoryScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(32),
             child: Column(
-              children: [
+              children: const [
                 HistoryCard(
                   date: "6 Desember 2022",
                   institusi: "Kemakom",
@@ -76,9 +75,9 @@ class HistoryScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 16),
                 HistoryCard(
-                    date: "6 Desember 2022",
-                    institusi: "Kemakom",
-                    headline: "1 Paket Sembako untuk pa Wahyu",
+                  date: "6 Desember 2022",
+                  institusi: "Kemakom",
+                  headline: "1 Paket Sembako untuk pa Wahyu",
                 ),
               ],
             ),

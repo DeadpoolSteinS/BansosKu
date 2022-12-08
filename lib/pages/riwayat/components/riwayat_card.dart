@@ -39,7 +39,9 @@ class HistoryCard extends StatelessWidget {
                 fontSize: 10,
               ),
             ),
-            SizedBox(height: 10,),
+            const SizedBox(
+              height: 10,
+            ),
             Text(
               institusi,
               style: const TextStyle(
@@ -47,7 +49,9 @@ class HistoryCard extends StatelessWidget {
                 fontSize: 15,
               ),
             ),
-            SizedBox(height: 10,),
+            const SizedBox(
+              height: 10,
+            ),
             Text(
               headline,
               style: const TextStyle(
@@ -56,7 +60,7 @@ class HistoryCard extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 8),
-            SizedBox(
+            const SizedBox(
               width: 64,
               height: 19,
             ),
