@@ -3,9 +3,10 @@ import 'package:bansosku/auth/signin/signup_screen.dart';
 import 'package:bansosku/bottom_bar.dart';
 import 'package:bansosku/pages/ajukan_bansos_form/ajukan_bansos_form_screen.dart';
 import 'package:bansosku/pages/alamat/alamat_screen.dart';
-import 'package:bansosku/pages/bansos_diajukan/bansos_diajukan_screen.dart';
+import 'package:bansosku/pages/bansos_diajukan/success_page_screen.dart';
 import 'package:bansosku/pages/detail_bansos/detail_bansos_screen.dart';
 import 'package:bansosku/pages/hasil_data/hasil_data_screen.dart';
+import 'package:bansosku/pages/hasil_salurkan/hasil_salurkan_screen.dart';
 import 'package:bansosku/pages/informasi_detail/informasi_detail_screen.dart';
 import 'package:bansosku/pages/notifikasi/notifikasi_screen.dart';
 import 'package:bansosku/pages/tujuan/tujuan_screen.dart';
@@ -63,10 +64,19 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
         settings: routeSettings,
         builder: (_) => const HasilDataScreen(),
       );
-    case BansosDiajukanScreen.routeName:
+    case SuccessPageScreen.routeName:
+      List<String> params = routeSettings.arguments as List<String>;
       return MaterialPageRoute(
         settings: routeSettings,
-        builder: (_) => const BansosDiajukanScreen(),
+        builder: (_) => SuccessPageScreen(
+          text: params[0],
+          subtext: params[1],
+        ),
+      );
+    case HasilSalurkanScreen.routeName:
+      return MaterialPageRoute(
+        settings: routeSettings,
+        builder: (_) => const HasilSalurkanScreen(),
       );
     default:
       return MaterialPageRoute(

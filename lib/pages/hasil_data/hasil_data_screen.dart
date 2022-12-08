@@ -2,7 +2,7 @@ import 'package:bansosku/common/custom_appbar.dart';
 import 'package:bansosku/common/custom_button2.dart';
 import 'package:bansosku/common/custom_hasil_data.dart';
 import 'package:bansosku/constants/my_colors.dart';
-import 'package:bansosku/pages/bansos_diajukan/bansos_diajukan_screen.dart';
+import 'package:bansosku/pages/bansos_diajukan/success_page_screen.dart';
 import 'package:flutter/material.dart';
 
 class HasilDataScreen extends StatelessWidget {
@@ -100,7 +100,11 @@ class HasilDataScreen extends StatelessWidget {
                       onTap: () {
                         Navigator.pushNamed(
                           context,
-                          BansosDiajukanScreen.routeName,
+                          SuccessPageScreen.routeName,
+                          arguments: [
+                            'Bantuan Sosial Diajukan',
+                            'Kami akan memberikan notifikasi tambahan jika ajuan mu di terima, semoga kamu baik baik saja',
+                          ],
                         );
                       },
                       child: const Text(
