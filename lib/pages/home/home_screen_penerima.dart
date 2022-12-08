@@ -2,6 +2,11 @@ import 'package:bansosku/constants/my_colors.dart';
 import 'package:bansosku/pages/home/components/feature_card.dart';
 import 'package:bansosku/pages/home/components/news_card.dart';
 import 'package:bansosku/pages/notifikasi/notifikasi_screen.dart';
+<<<<<<< HEAD
+import 'package:bansosku/pages/riwayat/riwayat_screen.dart';
+import 'package:bansosku/pages/salurkan/salurkan_screen.dart';
+=======
+>>>>>>> f0bcb7ec2240cd7b69934e4970d357eec46ad452
 import 'package:bansosku/pages/scan/scan_page.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -198,14 +203,24 @@ class _HomeScreenState extends State<HomeScreenPenerima> {
                                     cardWidth: cardWidth,
                                     label: "Peduli &\nSalurkan",
                                     image: "feature1.png",
-                                    onClick: () {},
+                                    onClick: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => const SalurkanScreen()),
+                                      );
+                                    },
                                   ),
                                   const SizedBox(width: 16),
                                   FeatureCard(
                                     cardWidth: cardWidth,
                                     label: "Riwayat\n",
                                     image: "feature2.png",
-                                    onClick: () {},
+                                    onClick: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => const HistoryScreen()),
+                                      );
+                                    },
                                   ),
                                   const SizedBox(width: 16),
                                   FeatureCard(
