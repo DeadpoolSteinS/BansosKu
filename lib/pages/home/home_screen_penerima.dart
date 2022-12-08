@@ -1,6 +1,7 @@
 import 'package:bansosku/constants/my_colors.dart';
 import 'package:bansosku/pages/home/components/feature_card.dart';
 import 'package:bansosku/pages/home/components/news_card.dart';
+import 'package:bansosku/pages/kriteria/kriteria_screen.dart';
 import 'package:bansosku/pages/notifikasi/notifikasi_screen.dart';
 
 import 'package:bansosku/pages/riwayat/riwayat_screen.dart';
@@ -219,7 +220,8 @@ class _HomeScreenState extends State<HomeScreenPenerima> {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                const HistoryScreen()),
+                                                const HistoryScreen()
+                                        ),
                                       );
                                     },
                                   ),
@@ -228,7 +230,15 @@ class _HomeScreenState extends State<HomeScreenPenerima> {
                                     cardWidth: cardWidth,
                                     label: "Kriteria\n",
                                     image: "gerigi.png",
-                                    onClick: () {},
+                                    onClick: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                            const CriteriaScreen()
+                                        ),
+                                      );
+                                    },
                                   ),
                                 ],
                               ),
