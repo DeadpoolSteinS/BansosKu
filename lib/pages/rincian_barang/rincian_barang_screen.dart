@@ -82,23 +82,23 @@ class RincianBarangScreen extends StatelessWidget {
                   institusi: "Kemakom",
                   headline: "1 Paket Sembako untuk pa Wahyu",
                 ),
-                InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const SemogaBermanfaat()),
-                    );
-                  },
-                  child: const CustomButton(
-                    text: "Selesai",
-                    // onPressed: () {
-                    //   Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(builder: (context) => const SemogaBermanfaat()),
-                    //   );
-                    // },
-                  ),
-                )
+                // InkWell(
+                //   onTap: () {
+                //     Navigator.push(
+                //       context,
+                //       MaterialPageRoute(builder: (context) => const SemogaBermanfaat()),
+                //     );
+                //   },
+                //   child: const CustomButton(
+                //     text: "Selesai",
+                //     onPressed: () {
+                //       Navigator.push(
+                //         context,
+                //         MaterialPageRoute(builder: (context) => const SemogaBermanfaat()),
+                //       );
+                //     },
+                //   ),
+                // )
               ],
             ),
           ),

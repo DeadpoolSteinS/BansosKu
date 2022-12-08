@@ -1,5 +1,6 @@
 import 'package:bansosku/bottom_bar.dart';
 import 'package:bansosku/constants/my_colors.dart';
+import 'package:bansosku/pages/landing_page/landing_page_screen.dart';
 import 'package:bansosku/router.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
             ),
       ),
       onGenerateRoute: (settings) => generateRoute(settings),
-      home: const BottomBar(),
+      home: const LandingPage(),
     );
   }
 }
