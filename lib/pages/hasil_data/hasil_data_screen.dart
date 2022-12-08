@@ -97,13 +97,19 @@ class HasilDataScreen extends StatelessWidget {
                       ),
                     ),
                     CustomButton2(
-                      text: "Konfirmasi",
                       onTap: () {
                         Navigator.pushNamed(
                           context,
                           BansosDiajukanScreen.routeName,
                         );
                       },
+                      child: const Text(
+                        "Konfirmasi",
+                        style: TextStyle(
+                          color: MyColors.primaryGreen,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                   ],
                 ),

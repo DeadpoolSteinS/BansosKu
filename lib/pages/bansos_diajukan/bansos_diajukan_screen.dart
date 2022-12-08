@@ -55,7 +55,6 @@ class BansosDiajukanScreen extends StatelessWidget {
                       ),
                     ),
                     CustomButton2(
-                      text: "Kembali",
                       onTap: () {
                         Navigator.pushNamedAndRemoveUntil(
                           context,
@@ -63,6 +62,13 @@ class BansosDiajukanScreen extends StatelessWidget {
                           (route) => false,
                         );
                       },
+                      child: const Text(
+                        "Kembali",
+                        style: TextStyle(
+                          color: MyColors.primaryGreen,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                   ],
                 ),

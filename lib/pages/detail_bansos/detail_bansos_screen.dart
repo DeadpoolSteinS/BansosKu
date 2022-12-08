@@ -1,6 +1,7 @@
 import 'package:bansosku/common/custom_appbar.dart';
 import 'package:bansosku/common/custom_button2.dart';
 import 'package:bansosku/common/custom_textfield3.dart';
+import 'package:bansosku/constants/my_colors.dart';
 import 'package:flutter/material.dart';
 
 class DetailBansosScreen extends StatelessWidget {
@@ -61,13 +62,42 @@ class DetailBansosScreen extends StatelessWidget {
                             const CustomTextfield3(
                               hint: "Kuantitas",
                             ),
+                            const SizedBox(height: 32),
+                            CustomButton2(
+                              onTap: () {},
+                              height: 32,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: const [
+                                  Text(
+                                    "Tambahkan Barang",
+                                    style: TextStyle(
+                                      color: MyColors.primaryGreen,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                  SizedBox(width: 4),
+                                  Icon(
+                                    Icons.add,
+                                    color: MyColors.primaryGreen,
+                                    size: 14,
+                                  ),
+                                ],
+                              ),
+                            ),
                           ],
                         ),
                       ),
                     ),
                     CustomButton2(
-                      text: "Selanjutnya",
                       onTap: () {},
+                      child: const Text(
+                        "Selanjutnya",
+                        style: TextStyle(
+                          color: MyColors.primaryGreen,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                   ],
                 ),

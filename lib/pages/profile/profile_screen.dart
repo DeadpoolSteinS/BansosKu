@@ -130,8 +130,14 @@ class ProfileScreen extends StatelessWidget {
                             ),
                             const SizedBox(height: 12),
                             CustomButton2(
-                              text: "Edit Profile",
                               onTap: () {},
+                              child: const Text(
+                                "Edit Profile",
+                                style: TextStyle(
+                                  color: MyColors.primaryGreen,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ),
                           ],
                         ),

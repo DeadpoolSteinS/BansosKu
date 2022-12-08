@@ -3,6 +3,7 @@ import 'package:bansosku/common/custom_button.dart';
 import 'package:bansosku/common/custom_button2.dart';
 import 'package:bansosku/common/custom_button_location.dart';
 import 'package:bansosku/common/custom_textfield4.dart';
+import 'package:bansosku/constants/my_colors.dart';
 import 'package:bansosku/pages/hasil_data/hasil_data_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -86,13 +87,19 @@ class AjukanBansosFormScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     CustomButton2(
-                      text: "Selanjutnya",
                       onTap: () {
                         Navigator.pushNamed(
                           context,
                           HasilDataScreen.routeName,
                         );
                       },
+                      child: const Text(
+                        "Selanjutnya",
+                        style: TextStyle(
+                          color: MyColors.primaryGreen,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                   ],
                 ),
