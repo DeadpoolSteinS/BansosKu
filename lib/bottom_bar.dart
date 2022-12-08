@@ -3,6 +3,7 @@ import 'package:bansosku/pages/home/home_screen.dart';
 import 'package:bansosku/pages/home/home_screen_penerima.dart';
 import 'package:bansosku/pages/informasi/informasi_screen.dart';
 import 'package:bansosku/pages/profile/profile_screen.dart';
+import 'package:bansosku/pages/riwayat/riwayat_screen.dart';
 import 'package:bansosku/pages/scan/scan_page.dart';
 import 'package:bansosku/pages/success/semoga_bermanfaat.dart';
 // import 'package:bansosku/auth/signin/profile/profile_screen.dart';
