@@ -4,9 +4,16 @@ import 'package:bansosku/common/custom_button2.dart';
 import 'package:bansosku/constants/my_colors.dart';
 import 'package:flutter/material.dart';
 
-class BansosDiajukanScreen extends StatelessWidget {
-  static const String routeName = '/bansos-diajukan';
-  const BansosDiajukanScreen({super.key});
+class SuccessPageScreen extends StatelessWidget {
+  static const String routeName = '/success-page';
+  final String text;
+  final String subtext;
+
+  const SuccessPageScreen({
+    super.key,
+    required this.text,
+    required this.subtext,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -33,20 +40,20 @@ class BansosDiajukanScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          const Text(
-                            "Bantuan Sosial Diajukan",
+                          Text(
+                            text,
                             textAlign: TextAlign.center,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: MyColors.primaryGreen,
                               fontWeight: FontWeight.bold,
                               fontSize: 32,
                             ),
                           ),
                           const SizedBox(height: 8),
-                          const Text(
-                            "Kami akan memberikan notifikasi tambahan jika ajuan mu di terima, semoga kamu baik baik saja",
+                          Text(
+                            subtext,
                             textAlign: TextAlign.center,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: MyColors.primaryGreen,
                               fontSize: 16,
                             ),

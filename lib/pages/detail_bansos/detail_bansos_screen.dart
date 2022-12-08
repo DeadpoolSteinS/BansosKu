@@ -2,6 +2,7 @@ import 'package:bansosku/common/custom_appbar.dart';
 import 'package:bansosku/common/custom_button2.dart';
 import 'package:bansosku/common/custom_textfield3.dart';
 import 'package:bansosku/constants/my_colors.dart';
+import 'package:bansosku/pages/hasil_salurkan/hasil_salurkan_screen.dart';
 import 'package:flutter/material.dart';
 
 class DetailBansosScreen extends StatelessWidget {
@@ -90,7 +91,12 @@ class DetailBansosScreen extends StatelessWidget {
                       ),
                     ),
                     CustomButton2(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,
+                          HasilSalurkanScreen.routeName,
+                        );
+                      },
                       child: const Text(
                         "Selanjutnya",
                         style: TextStyle(

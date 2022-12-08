@@ -34,7 +34,7 @@ class LandingPage extends StatelessWidget {
                 children: [
                   Container(
                     width: MediaQuery.of(context).size.width,
-                    height: ( MediaQuery.of(context).size.height / 2 ) + 50,
+                    height: (MediaQuery.of(context).size.height / 2) + 50,
                     decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage("assets/BansosKu 2.png"),
@@ -46,22 +46,32 @@ class LandingPage extends StatelessWidget {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const BottomBarPenerima()),
+                        MaterialPageRoute(
+                            builder: (context) => const BottomBarPenerima()),
                       );
                     },
-                    child: const Text("Penerima", style: TextStyle(color: MyColors.primaryGreen),),
                     bgColor: Colors.white,
+                    child: const Text(
+                      "Penerima",
+                      style: TextStyle(color: MyColors.primaryGreen),
+                    ),
                   ),
-                  const SizedBox(height: 10,),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   CustomButton(
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const BottomBar()),
+                        MaterialPageRoute(
+                            builder: (context) => const BottomBar()),
                       );
                     },
-                    child: const Text("Pengirim", style: TextStyle(color: MyColors.primaryGreen),),
                     bgColor: Colors.white,
+                    child: const Text(
+                      "Pengirim",
+                      style: TextStyle(color: MyColors.primaryGreen),
+                    ),
                   ),
                 ],
               ),
