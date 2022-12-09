@@ -1,6 +1,4 @@
-import 'package:bansosku/common/custom_appbar.dart';
 import 'package:bansosku/common/custom_button.dart';
-import 'package:bansosku/common/custom_textfield_empty.dart';
 import 'package:bansosku/constants/my_colors.dart';
 import 'package:bansosku/pages/success/semoga_bermanfaat.dart';
 import 'package:flutter/material.dart';
@@ -66,53 +64,58 @@ class RincianBarangScreen extends StatelessWidget {
                                     ],
                                   ),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Container(
-                                        width: MediaQuery.of(context).size.width,
+                                        width:
+                                            MediaQuery.of(context).size.width,
                                         height: 25,
                                         decoration: const BoxDecoration(
                                           image: DecorationImage(
-                                            image: AssetImage("assets/BansosKu_white 1.png"),
+                                            image: AssetImage(
+                                                "assets/BansosKu_white 1.png"),
                                           ),
                                         ),
                                       ),
                                       Container(
-                                        width: double.infinity,
-                                        height: cardWidth - 20,
-                                        padding: const EdgeInsets.symmetric(
-                                          horizontal: 16,
-                                          vertical: 20,
-                                        ),
-                                        decoration: BoxDecoration(
-                                          color: MyColors.primaryGreen,
-                                          borderRadius: BorderRadius.circular(9),
-                                          boxShadow: const [
-                                            BoxShadow(
-                                              color: Colors.black26,
-                                              blurRadius: 4,
-                                              offset: Offset(0, 4),
-                                            )
-                                          ],
-                                        ),
-                                        child: Column(
-                                          children: [
-                                            const Text("Kemakom",
-                                              style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 12,
+                                          width: double.infinity,
+                                          height: cardWidth - 20,
+                                          padding: const EdgeInsets.symmetric(
+                                            horizontal: 16,
+                                            vertical: 20,
+                                          ),
+                                          decoration: BoxDecoration(
+                                            color: MyColors.primaryGreen,
+                                            borderRadius:
+                                                BorderRadius.circular(9),
+                                            boxShadow: const [
+                                              BoxShadow(
+                                                color: Colors.black26,
+                                                blurRadius: 4,
+                                                offset: Offset(0, 4),
+                                              )
+                                            ],
+                                          ),
+                                          child: Column(
+                                            children: const [
+                                              Text(
+                                                "Kemakom",
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 12,
+                                                ),
                                               ),
-                                            ),
-                                            const Text("1 paket sembako untuk wahyu",
-                                              style: TextStyle(
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.w600,
-                                                fontSize: 15,
+                                              Text(
+                                                "1 paket sembako untuk wahyu",
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.w600,
+                                                  fontSize: 15,
+                                                ),
                                               ),
-                                            ),
-                                          ],
-                                        )
-                                      )
+                                            ],
+                                          ))
                                     ],
                                   ),
                                 ),
@@ -123,9 +126,19 @@ class RincianBarangScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20,),
-                  Text("Rincian Barang", style: TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),),
-                  SizedBox(height: 20,),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Text(
+                    "Rincian Barang",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
                   Container(
                       width: cardWidth * 3,
                       height: cardWidth - 20,
@@ -146,14 +159,16 @@ class RincianBarangScreen extends StatelessWidget {
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text("Beras",
+                        children: const [
+                          Text(
+                            "Beras",
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 12,
                             ),
                           ),
-                          const Text("Rojo lele 5 Kg",
+                          Text(
+                            "Rojo lele 5 Kg",
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w600,
@@ -161,9 +176,10 @@ class RincianBarangScreen extends StatelessWidget {
                             ),
                           ),
                         ],
-                      )
+                      )),
+                  const SizedBox(
+                    height: 10,
                   ),
-                  SizedBox(height: 10,),
                   Container(
                       width: cardWidth * 3,
                       height: cardWidth - 20,
@@ -184,14 +200,16 @@ class RincianBarangScreen extends StatelessWidget {
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text("Beras",
+                        children: const [
+                          Text(
+                            "Beras",
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 12,
                             ),
                           ),
-                          const Text("Rojo lele 5 Kg",
+                          Text(
+                            "Rojo lele 5 Kg",
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w600,
@@ -199,9 +217,10 @@ class RincianBarangScreen extends StatelessWidget {
                             ),
                           ),
                         ],
-                      )
+                      )),
+                  const SizedBox(
+                    height: 10,
                   ),
-                  SizedBox(height: 10,),
                   Container(
                       width: cardWidth * 3,
                       height: cardWidth - 20,
@@ -222,14 +241,16 @@ class RincianBarangScreen extends StatelessWidget {
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text("Beras",
+                        children: const [
+                          Text(
+                            "Beras",
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 12,
                             ),
                           ),
-                          const Text("Rojo lele 5 Kg",
+                          Text(
+                            "Rojo lele 5 Kg",
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w600,
@@ -237,11 +258,20 @@ class RincianBarangScreen extends StatelessWidget {
                             ),
                           ),
                         ],
-                      )
+                      )),
+                  const SizedBox(
+                    height: 20,
                   ),
-                  SizedBox(height: 20,),
-                  Text("Kelengkapan Barang", style: TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),),
-                  SizedBox(height: 20,),
+                  const Text(
+                    "Kelengkapan Barang",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
                   Container(
                       width: cardWidth * 3,
                       height: cardWidth - 20,
@@ -250,21 +280,22 @@ class RincianBarangScreen extends StatelessWidget {
                         vertical: 20,
                       ),
                       decoration: BoxDecoration(
-
                         borderRadius: BorderRadius.circular(9),
                         border: Border.all(color: MyColors.primaryGreen),
                       ),
                       child: Row(
                         children: [
                           Column(
-                            children: [
-                              const Text("Beras",
+                            children: const [
+                              Text(
+                                "Beras",
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 12,
                                 ),
                               ),
-                              const Text("Rojo lele 5 Kg",
+                              Text(
+                                "Rojo lele 5 Kg",
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w600,
@@ -273,16 +304,20 @@ class RincianBarangScreen extends StatelessWidget {
                               ),
                             ],
                           ),
-                          SizedBox(width: 25,),
+                          const SizedBox(
+                            width: 25,
+                          ),
                           Column(
-                            children: [
-                              const Text("Beras",
+                            children: const [
+                              Text(
+                                "Beras",
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 12,
                                 ),
                               ),
-                              const Text("Rojo lele 5 Kg",
+                              Text(
+                                "Rojo lele 5 Kg",
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w600,
@@ -292,17 +327,24 @@ class RincianBarangScreen extends StatelessWidget {
                             ],
                           )
                         ],
-                      )
+                      )),
+                  const SizedBox(
+                    height: 20,
                   ),
-                  SizedBox(height: 20,),
-                  CustomButton(child: Text("Selesai"), onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const SemogaBermanfaat()),
-                    );
-                  }, width: cardWidth * 3,
+                  CustomButton(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SemogaBermanfaat()),
+                      );
+                    },
+                    width: cardWidth * 3,
+                    child: const Text("Selesai"),
                   ),
-                  SizedBox(height: 20,),
+                  const SizedBox(
+                    height: 20,
+                  ),
                 ],
               ),
             ),
