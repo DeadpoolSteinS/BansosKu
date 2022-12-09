@@ -3,6 +3,7 @@ import 'package:bansosku/pages/home/components/feature_card.dart';
 import 'package:bansosku/pages/home/components/news_card.dart';
 import 'package:bansosku/pages/kriteria/kriteria_screen.dart';
 import 'package:bansosku/pages/notifikasi/notifikasi_screen.dart';
+import 'package:bansosku/pages/rincian_barang/rincian_barang_screen.dart';
 
 import 'package:bansosku/pages/riwayat/riwayat_screen.dart';
 // import 'package:bansosku/pages/salurkan/salurkan_screen.dart';
@@ -204,10 +205,10 @@ class _HomeScreenState extends State<HomeScreenPenerima> {
                                     label: "Peduli &\nSalurkan",
                                     image: "feature1.png",
                                     onClick: () {
-                                      // Navigator.push(
-                                      //   context,
-                                      //   MaterialPageRoute(builder: (context) => const SalurkanScreen()),
-                                      // );
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => const RincianBarangScreen()),
+                                      );
                                     },
                                   ),
                                   const SizedBox(width: 16),
