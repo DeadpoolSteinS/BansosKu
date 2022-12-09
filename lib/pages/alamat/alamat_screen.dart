@@ -3,12 +3,42 @@ import 'package:bansosku/common/custom_button2.dart';
 import 'package:bansosku/common/custom_textfield3.dart';
 import 'package:bansosku/common/custom_textfield5.dart';
 import 'package:bansosku/constants/my_colors.dart';
+import 'package:bansosku/models/alamat.dart';
+import 'package:bansosku/models/tujuan.dart';
 import 'package:bansosku/pages/detail_bansos/detail_bansos_screen.dart';
 import 'package:flutter/material.dart';
 
-class AlamatScreen extends StatelessWidget {
+class AlamatScreen extends StatefulWidget {
   static const String routeName = '/alamat-bansos';
-  const AlamatScreen({super.key});
+  final Tujuan tujuan;
+
+  const AlamatScreen({
+    super.key,
+    required this.tujuan,
+  });
+
+  @override
+  State<AlamatScreen> createState() => _AlamatScreenState();
+}
+
+class _AlamatScreenState extends State<AlamatScreen> {
+  final TextEditingController provinsiController = TextEditingController();
+  final TextEditingController kotaController = TextEditingController();
+  final TextEditingController kecamatanController = TextEditingController();
+  final TextEditingController desaController = TextEditingController();
+
+  late Alamat alamat;
+
+  void setAlamatData() {
+    setState(() {
+      alamat = Alamat(
+        provinsi: provinsiController.text,
+        kota: kotaController.text,
+        kecamatan: kecamatanController.text,
+        desa: desaController.text,
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,19 +77,23 @@ class AlamatScreen extends StatelessWidget {
                               ],
                             ),
                             const SizedBox(height: 20),
-                            const CustomTextfield3(
+                            CustomTextfield3(
+                              controller: provinsiController,
                               hint: "Provinsi",
                             ),
                             const SizedBox(height: 20),
-                            const CustomTextfield3(
+                            CustomTextfield3(
+                              controller: kotaController,
                               hint: "Kota/Kab",
                             ),
                             const SizedBox(height: 20),
-                            const CustomTextfield3(
+                            CustomTextfield3(
+                              controller: kecamatanController,
                               hint: "Kecamatan",
                             ),
                             const SizedBox(height: 20),
-                            const CustomTextfield3(
+                            CustomTextfield3(
+                              controller: desaController,
                               hint: "Desa/Kelurahan",
                             ),
                             const SizedBox(height: 20),
@@ -79,9 +113,11 @@ class AlamatScreen extends StatelessWidget {
                     ),
                     CustomButton2(
                       onTap: () {
+                        setAlamatData();
                         Navigator.pushNamed(
                           context,
                           DetailBansosScreen.routeName,
+                          arguments: [widget.tujuan, alamat],
                         );
                       },
                       child: const Text(

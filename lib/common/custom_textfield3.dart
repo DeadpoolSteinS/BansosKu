@@ -2,10 +2,12 @@ import 'package:bansosku/constants/my_colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextfield3 extends StatelessWidget {
+  final TextEditingController controller;
   final String hint;
 
   const CustomTextfield3({
     super.key,
+    required this.controller,
     required this.hint,
   });
 
@@ -24,6 +26,7 @@ class CustomTextfield3 extends StatelessWidget {
         ],
       ),
       child: TextFormField(
+        controller: controller,
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.symmetric(horizontal: 20),
           filled: true,

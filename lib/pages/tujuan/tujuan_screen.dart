@@ -2,12 +2,36 @@ import 'package:bansosku/common/custom_appbar.dart';
 import 'package:bansosku/common/custom_button2.dart';
 import 'package:bansosku/common/custom_textfield4.dart';
 import 'package:bansosku/constants/my_colors.dart';
+import 'package:bansosku/models/tujuan.dart';
 import 'package:bansosku/pages/alamat/alamat_screen.dart';
 import 'package:flutter/material.dart';
 
-class TujuanScreen extends StatelessWidget {
+class TujuanScreen extends StatefulWidget {
   static const String routeName = '/tujuan-bansos';
   const TujuanScreen({super.key});
+
+  @override
+  State<TujuanScreen> createState() => _TujuanScreenState();
+}
+
+class _TujuanScreenState extends State<TujuanScreen> {
+  final TextEditingController tujuanController = TextEditingController();
+  final TextEditingController pesanController = TextEditingController();
+  final TextEditingController temaController = TextEditingController();
+  final TextEditingController jargonController = TextEditingController();
+
+  late Tujuan tujuan;
+
+  void setTujuanData() {
+    setState(() {
+      tujuan = Tujuan(
+        tujuan: tujuanController.text,
+        pesan: pesanController.text,
+        tema: temaController.text,
+        jargon: jargonController.text,
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,24 +70,28 @@ class TujuanScreen extends StatelessWidget {
                               ],
                             ),
                             const SizedBox(height: 8),
-                            const CustomTextfield4(
+                            CustomTextfield4(
+                              textEditingController: tujuanController,
                               label: "Tujuan",
                               hint: "Masukkan tujuan pengiriman bantuan sosial",
                             ),
                             const SizedBox(height: 8),
-                            const CustomTextfield4(
+                            CustomTextfield4(
+                              textEditingController: pesanController,
                               label: "Pesan",
                               hint:
                                   "Masukan pesan untuk penerima bantuan sosial",
                               maxLine: 5,
                             ),
                             const SizedBox(height: 8),
-                            const CustomTextfield4(
+                            CustomTextfield4(
+                              textEditingController: temaController,
                               label: "Tema",
                               hint: "Masukan tema penyaluran bantuan sosial",
                             ),
                             const SizedBox(height: 8),
-                            const CustomTextfield4(
+                            CustomTextfield4(
+                              textEditingController: jargonController,
                               label: "Jargon",
                               hint: "Masukan jargon bantuan sosial",
                             ),
@@ -74,9 +102,11 @@ class TujuanScreen extends StatelessWidget {
                     const SizedBox(height: 16),
                     CustomButton2(
                       onTap: () {
+                        setTujuanData();
                         Navigator.pushNamed(
                           context,
                           AlamatScreen.routeName,
+                          arguments: tujuan,
                         );
                       },
                       child: const Text(

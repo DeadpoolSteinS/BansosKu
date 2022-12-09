@@ -2,12 +2,45 @@ import 'package:bansosku/common/custom_appbar.dart';
 import 'package:bansosku/common/custom_button2.dart';
 import 'package:bansosku/common/custom_textfield3.dart';
 import 'package:bansosku/constants/my_colors.dart';
+import 'package:bansosku/models/product.dart';
 import 'package:bansosku/pages/hasil_salurkan/hasil_salurkan_screen.dart';
 import 'package:flutter/material.dart';
 
-class DetailBansosScreen extends StatelessWidget {
+class DetailBansosScreen extends StatefulWidget {
   static const String routeName = '/detail-bansos';
-  const DetailBansosScreen({super.key});
+  final List<dynamic> data;
+
+  const DetailBansosScreen({
+    super.key,
+    required this.data,
+  });
+
+  @override
+  State<DetailBansosScreen> createState() => _DetailBansosScreenState();
+}
+
+class _DetailBansosScreenState extends State<DetailBansosScreen> {
+  final TextEditingController jenisController = TextEditingController();
+  final TextEditingController merkController = TextEditingController();
+  final TextEditingController satuanController = TextEditingController();
+  final TextEditingController kuantitasController = TextEditingController();
+
+  List<Product> products = [];
+
+  void setProductData() {
+    setState(() {
+      products.add(Product(
+        jenis: jenisController.text,
+        merk: merkController.text,
+        satuan: satuanController.text,
+        kuantitas: kuantitasController.text,
+      ));
+    });
+    jenisController.clear();
+    merkController.clear();
+    satuanController.clear();
+    kuantitasController.clear();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,24 +81,30 @@ class DetailBansosScreen extends StatelessWidget {
                               ],
                             ),
                             const SizedBox(height: 20),
-                            const CustomTextfield3(
+                            CustomTextfield3(
+                              controller: jenisController,
                               hint: "Jenis",
                             ),
                             const SizedBox(height: 20),
-                            const CustomTextfield3(
+                            CustomTextfield3(
+                              controller: merkController,
                               hint: "Merk",
                             ),
                             const SizedBox(height: 20),
-                            const CustomTextfield3(
+                            CustomTextfield3(
+                              controller: satuanController,
                               hint: "Satuan",
                             ),
                             const SizedBox(height: 20),
-                            const CustomTextfield3(
+                            CustomTextfield3(
+                              controller: kuantitasController,
                               hint: "Kuantitas",
                             ),
                             const SizedBox(height: 32),
                             CustomButton2(
-                              onTap: () {},
+                              onTap: () {
+                                setProductData();
+                              },
                               height: 32,
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -92,9 +131,11 @@ class DetailBansosScreen extends StatelessWidget {
                     ),
                     CustomButton2(
                       onTap: () {
+                        widget.data.add(products);
                         Navigator.pushNamed(
                           context,
                           HasilSalurkanScreen.routeName,
+                          arguments: widget.data,
                         );
                       },
                       child: const Text(

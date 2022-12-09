@@ -2,12 +2,14 @@ import 'package:bansosku/constants/my_colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextfield4 extends StatelessWidget {
+  final TextEditingController textEditingController;
   final String label;
   final String hint;
   final int maxLine;
 
   const CustomTextfield4({
     super.key,
+    required this.textEditingController,
     required this.label,
     required this.hint,
     this.maxLine = 1,
@@ -27,6 +29,7 @@ class CustomTextfield4 extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         TextFormField(
+          controller: textEditingController,
           decoration: InputDecoration(
             contentPadding: const EdgeInsets.symmetric(
               horizontal: 14,

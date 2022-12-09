@@ -1,6 +1,7 @@
 import 'package:bansosku/auth/signin/signin_screen.dart';
 import 'package:bansosku/auth/signin/signup_screen.dart';
 import 'package:bansosku/bottom_bar.dart';
+import 'package:bansosku/models/tujuan.dart';
 import 'package:bansosku/pages/ajukan_bansos_form/ajukan_bansos_form_screen.dart';
 import 'package:bansosku/pages/alamat/alamat_screen.dart';
 import 'package:bansosku/pages/bansos_diajukan/success_page_screen.dart';
@@ -45,14 +46,16 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
         builder: (_) => const TujuanScreen(),
       );
     case AlamatScreen.routeName:
+      Tujuan tujuan = routeSettings.arguments as Tujuan;
       return MaterialPageRoute(
         settings: routeSettings,
-        builder: (_) => const AlamatScreen(),
+        builder: (_) => AlamatScreen(tujuan: tujuan),
       );
     case DetailBansosScreen.routeName:
+      List<dynamic> data = routeSettings.arguments as List<dynamic>;
       return MaterialPageRoute(
         settings: routeSettings,
-        builder: (_) => const DetailBansosScreen(),
+        builder: (_) => DetailBansosScreen(data: data),
       );
     case AjukanBansosFormScreen.routeName:
       return MaterialPageRoute(
@@ -74,9 +77,10 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
         ),
       );
     case HasilSalurkanScreen.routeName:
+      List<dynamic> data = routeSettings.arguments as List<dynamic>;
       return MaterialPageRoute(
         settings: routeSettings,
-        builder: (_) => const HasilSalurkanScreen(),
+        builder: (_) => HasilSalurkanScreen(data: data),
       );
     default:
       return MaterialPageRoute(

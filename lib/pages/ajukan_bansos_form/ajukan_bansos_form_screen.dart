@@ -7,10 +7,16 @@ import 'package:bansosku/constants/my_colors.dart';
 import 'package:bansosku/pages/hasil_data/hasil_data_screen.dart';
 import 'package:flutter/material.dart';
 
-class AjukanBansosFormScreen extends StatelessWidget {
+class AjukanBansosFormScreen extends StatefulWidget {
   static const String routeName = '/ajukan-bansos-form';
   const AjukanBansosFormScreen({super.key});
 
+  @override
+  State<AjukanBansosFormScreen> createState() => _AjukanBansosFormScreenState();
+}
+
+class _AjukanBansosFormScreenState extends State<AjukanBansosFormScreen> {
+  final TextEditingController textEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,19 +44,22 @@ class AjukanBansosFormScreen extends StatelessWidget {
                             const SizedBox(height: 16),
                             Column(
                               children: [
-                                const CustomTextfield4(
+                                CustomTextfield4(
+                                  textEditingController: textEditingController,
                                   label: "Nama",
                                   hint: "Masukkan Nama",
                                 ),
                                 const SizedBox(height: 8),
-                                const CustomTextfield4(
+                                CustomTextfield4(
+                                  textEditingController: textEditingController,
                                   label: "No KTP",
                                   hint: "Masukkan no KTP",
                                 ),
                                 const SizedBox(height: 16),
                                 const CustomButtonLocation(),
                                 const SizedBox(height: 16),
-                                const CustomTextfield4(
+                                CustomTextfield4(
+                                  textEditingController: textEditingController,
                                   label: "Deskripsi",
                                   hint:
                                       "Deskripsikan musibah yang kamu alami ...",
