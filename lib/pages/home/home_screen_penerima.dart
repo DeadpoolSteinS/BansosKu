@@ -72,7 +72,7 @@ class _HomeScreenState extends State<HomeScreenPenerima> {
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 const Text(
-                                  "Hi, Klaus Syariah",
+                                  "Hi, Nelly Joy",
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w600,
@@ -121,7 +121,7 @@ class _HomeScreenState extends State<HomeScreenPenerima> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Container(
-                                    width: (cardWidth * 3) + 25,
+                                    width: (cardWidth * 3) + 32,
                                     height: cardWidth + 25,
                                     padding: const EdgeInsets.symmetric(
                                       horizontal: 16,
@@ -161,7 +161,7 @@ class _HomeScreenState extends State<HomeScreenPenerima> {
                                             ),
                                           ],
                                         ),
-                                        const SizedBox(width: 25),
+                                        const SizedBox(width: 24),
                                         InkWell(
                                           onTap: () {
                                             Navigator.push(
@@ -172,7 +172,7 @@ class _HomeScreenState extends State<HomeScreenPenerima> {
                                             );
                                           },
                                           child: Container(
-                                            width: cardWidth,
+                                            width: 80,
                                             height: cardWidth,
                                             decoration: BoxDecoration(
                                               color: const Color(0xffD9D9D9),
@@ -202,12 +202,14 @@ class _HomeScreenState extends State<HomeScreenPenerima> {
                                 children: [
                                   FeatureCard(
                                     cardWidth: cardWidth,
-                                    label: "Peduli &\nSalurkan",
+                                    label: "BantuanKu\n",
                                     image: "feature1.png",
                                     onClick: () {
                                       Navigator.push(
                                         context,
-                                        MaterialPageRoute(builder: (context) => const RincianBarangScreen()),
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const RincianBarangScreen()),
                                       );
                                     },
                                   ),
@@ -221,8 +223,7 @@ class _HomeScreenState extends State<HomeScreenPenerima> {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                const HistoryScreen()
-                                        ),
+                                                const HistoryScreen()),
                                       );
                                     },
                                   ),
@@ -236,8 +237,7 @@ class _HomeScreenState extends State<HomeScreenPenerima> {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                            const CriteriaScreen()
-                                        ),
+                                                const CriteriaScreen()),
                                       );
                                     },
                                   ),

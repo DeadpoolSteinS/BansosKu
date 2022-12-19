@@ -125,6 +125,7 @@ class _DetailBansosScreenState extends State<DetailBansosScreen> {
                                 ],
                               ),
                             ),
+                            const SizedBox(height: 16),
                           ],
                         ),
                       ),

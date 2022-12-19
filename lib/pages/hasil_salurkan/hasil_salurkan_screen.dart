@@ -3,6 +3,7 @@ import 'package:bansosku/common/custom_button2.dart';
 import 'package:bansosku/constants/my_colors.dart';
 import 'package:bansosku/pages/bansos_diajukan/success_page_screen.dart';
 import 'package:bansosku/pages/hasil_salurkan/components/list_hasil_salurkan.dart';
+import 'package:bansosku/pages/hasil_salurkan/hasli_salurkan_service.dart';
 import 'package:flutter/material.dart';
 
 class HasilSalurkanScreen extends StatefulWidget {
@@ -19,6 +20,8 @@ class HasilSalurkanScreen extends StatefulWidget {
 }
 
 class _HasilSalurkanScreenState extends State<HasilSalurkanScreen> {
+  final HasilSalurkanService services = HasilSalurkanService();
+
   @override
   void initState() {
     super.initState();
@@ -30,6 +33,28 @@ class _HasilSalurkanScreenState extends State<HasilSalurkanScreen> {
   void setTotalPacs() {
     for (int i = 0; i < widget.data[2].length; i++) {
       total += int.parse(widget.data[2][i].kuantitas);
+    }
+  }
+
+  void addAlamat() {
+    services.addAlamat(
+      context: context,
+      provinsi: widget.data[1].provinsi,
+      kota: widget.data[1].kota,
+      kecamatan: widget.data[1].kecamatan,
+      desa: widget.data[1].desa,
+    );
+  }
+
+  void addProduct() {
+    for (int i = 0; i < widget.data[2].length; i++) {
+      services.addProduct(
+        context: context,
+        jenis: widget.data[2][i].jenis,
+        merk: widget.data[2][i].merk,
+        satuan: widget.data[2][i].satuan,
+        kuantitas: widget.data[2][i].kuantitas,
+      );
     }
   }
 
@@ -446,6 +471,8 @@ class _HasilSalurkanScreenState extends State<HasilSalurkanScreen> {
                     ),
                     CustomButton2(
                       onTap: () {
+                        addAlamat();
+                        addProduct();
                         Navigator.pushNamed(
                           context,
                           SuccessPageScreen.routeName,

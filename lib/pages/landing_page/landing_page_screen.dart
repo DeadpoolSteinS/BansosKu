@@ -1,3 +1,4 @@
+import 'package:bansosku/auth/signin/signin_screen.dart';
 import 'package:bansosku/bottom_bar.dart';
 import 'package:bansosku/bottom_bar_penerima.dart';
 import 'package:bansosku/constants/my_colors.dart';
@@ -47,7 +48,8 @@ class LandingPage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const BottomBarPenerima()),
+                          builder: (context) => const BottomBarPenerima(),
+                        ),
                       );
                     },
                     bgColor: Colors.white,
@@ -64,12 +66,13 @@ class LandingPage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const BottomBar()),
+                          builder: (context) => const SigninScreen(),
+                        ),
                       );
                     },
                     bgColor: Colors.white,
                     child: const Text(
-                      "Pengirim",
+                      "Penyalur",
                       style: TextStyle(color: MyColors.primaryGreen),
                     ),
                   ),

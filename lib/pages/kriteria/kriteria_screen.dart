@@ -47,13 +47,16 @@ class CriteriaScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                        const Center(
-                          child: Text(
-                            "Kriteria",
-                            style: TextStyle(
-                              color: MyColors.primaryGreen,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 25,
+                        Container(
+                          margin: const EdgeInsets.only(top: 8),
+                          child: const Center(
+                            child: Text(
+                              "Kriteria",
+                              style: TextStyle(
+                                color: MyColors.primaryGreen,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 25,
+                              ),
                             ),
                           ),
                         ),
@@ -144,7 +147,6 @@ class CriteriaScreen extends StatelessWidget {
                         ),
                         Container(
                           width: double.infinity,
-                          height: cardWidth * 6,
                           padding: const EdgeInsets.symmetric(
                             horizontal: 16,
                             vertical: 20,

@@ -1,3 +1,4 @@
+import 'package:bansosku/bottom_bar_penerima.dart';
 import 'package:bansosku/common/custom_button.dart';
 import 'package:bansosku/constants/my_colors.dart';
 import 'package:flutter/material.dart';
@@ -71,7 +72,14 @@ class SemogaBermanfaat extends StatelessWidget {
                   ),
                   const SizedBox(height: 50),
                   CustomButton(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const BottomBarPenerima(),
+                        ),
+                      );
+                    },
                     child: const Text("Beranda"),
                   ),
                   const SizedBox(height: 12),

@@ -116,7 +116,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 children: [
                                   FeatureCard(
                                     cardWidth: cardWidth,
-                                    label: "Informasi\nBansos",
+                                    label: "Kirim\nBansos",
                                     bgColor: const Color(0xff154E5E),
                                     image: "feature1.png",
                                     onClick: () {

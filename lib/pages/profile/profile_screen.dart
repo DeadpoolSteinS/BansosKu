@@ -83,7 +83,7 @@ class ProfileScreen extends StatelessWidget {
                         child: Column(
                           children: [
                             const Text(
-                              "Jane Doe",
+                              "Nelly Joy",
                               style: TextStyle(
                                 color: MyColors.primaryGreen,
                                 fontSize: 16,
@@ -102,7 +102,7 @@ class ProfileScreen extends StatelessWidget {
                                 ),
                                 SizedBox(height: 4),
                                 Text(
-                                  "janedoe@gmail.com",
+                                  "nellyjoy@gmail.com",
                                   style: TextStyle(
                                     fontSize: 12,
                                   ),
