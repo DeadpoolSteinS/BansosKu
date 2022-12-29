@@ -1,7 +1,9 @@
 import 'package:bansosku/common/custom_appbar.dart';
 import 'package:bansosku/common/custom_button2.dart';
+import 'package:bansosku/common/my_pie_chart.dart';
 import 'package:bansosku/constants/my_colors.dart';
 import 'package:bansosku/pages/bansos_diajukan/success_page_screen.dart';
+import 'package:bansosku/pages/hasil_salurkan/components/keterangan_pie_chart.dart';
 import 'package:bansosku/pages/hasil_salurkan/components/list_hasil_salurkan.dart';
 import 'package:bansosku/pages/hasil_salurkan/hasli_salurkan_service.dart';
 import 'package:flutter/material.dart';
@@ -178,7 +180,7 @@ class _HasilSalurkanScreenState extends State<HasilSalurkanScreen> {
                             ),
                             const SizedBox(height: 24),
                             Container(
-                              height: 320,
+                              height: 340,
                               padding: const EdgeInsets.all(4),
                               decoration: BoxDecoration(
                                 color: MyColors.cardBg,
@@ -249,219 +251,56 @@ class _HasilSalurkanScreenState extends State<HasilSalurkanScreen> {
                                     ],
                                   ),
                                   const SizedBox(height: 8),
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 32,
+                                  const Text(
+                                    "Provinsi Jawa Barat",
+                                    style: TextStyle(
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.w600,
                                     ),
+                                  ),
+                                  const SizedBox(height: 8),
+                                  SizedBox(
+                                    width: 140,
+                                    height: 140,
+                                    child: CustomPaint(
+                                      painter: MyPieChart(
+                                        [30, 10, 30, 30],
+                                        const [
+                                          Color(0xffF4BE37),
+                                          Color(0xffFF9F40),
+                                          Color(0xff0D2535),
+                                          Color(0xff5388D8)
+                                        ],
+                                        context,
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    padding: const EdgeInsets.all(8),
                                     child: Column(
-                                      children: [
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Container(
-                                              width: 120,
-                                              height: 90,
-                                              decoration: const BoxDecoration(
-                                                border: Border(
-                                                  right: BorderSide(
-                                                    color: MyColors.primaryText,
-                                                  ),
-                                                  bottom: BorderSide(
-                                                    color: MyColors.primaryText,
-                                                  ),
-                                                ),
-                                              ),
-                                              child: Column(
-                                                children: [
-                                                  Container(
-                                                    width: 70,
-                                                    height: 70,
-                                                    decoration: BoxDecoration(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              35),
-                                                      border: Border.all(
-                                                        color: Colors.green,
-                                                        width: 2,
-                                                      ),
-                                                    ),
-                                                    child: const Center(
-                                                      child: Text(
-                                                        "13JT",
-                                                        style: TextStyle(
-                                                          fontSize: 16,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  const SizedBox(height: 4),
-                                                  const Text(
-                                                    "Total Warga Provinsi Jawa Barat",
-                                                    style: TextStyle(
-                                                      fontSize: 6,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                            Container(
-                                              width: 120,
-                                              height: 90,
-                                              decoration: const BoxDecoration(
-                                                border: Border(
-                                                  bottom: BorderSide(
-                                                    color: MyColors.primaryText,
-                                                  ),
-                                                ),
-                                              ),
-                                              child: Column(
-                                                children: [
-                                                  Container(
-                                                    width: 70,
-                                                    height: 70,
-                                                    decoration: BoxDecoration(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              35),
-                                                      border: Border.all(
-                                                        color: Colors.yellow,
-                                                        width: 2,
-                                                      ),
-                                                    ),
-                                                    child: const Center(
-                                                      child: Text(
-                                                        "956RB",
-                                                        style: TextStyle(
-                                                          fontSize: 16,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  const SizedBox(height: 4),
-                                                  const Text(
-                                                    "Total Penerima Layak Provinsi\nJawa Barat",
-                                                    textAlign: TextAlign.center,
-                                                    style: TextStyle(
-                                                      fontSize: 6,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ],
+                                      children: const [
+                                        KeteranganPieChart(
+                                          label: "Total Masyarakat",
+                                          color: Color(0xff0D2535),
                                         ),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Container(
-                                              width: 120,
-                                              height: 110,
-                                              padding: const EdgeInsets.only(
-                                                top: 8,
-                                              ),
-                                              decoration: const BoxDecoration(
-                                                border: Border(
-                                                  right: BorderSide(
-                                                    color: MyColors.primaryText,
-                                                  ),
-                                                ),
-                                              ),
-                                              child: Column(
-                                                children: [
-                                                  Container(
-                                                    width: 70,
-                                                    height: 70,
-                                                    decoration: BoxDecoration(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              35),
-                                                      border: Border.all(
-                                                        color: Colors.blue,
-                                                        width: 2,
-                                                      ),
-                                                    ),
-                                                    child: const Center(
-                                                      child: Text(
-                                                        "10JT",
-                                                        style: TextStyle(
-                                                          fontSize: 16,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  const SizedBox(height: 4),
-                                                  const Text(
-                                                    "Target Penerima",
-                                                    style: TextStyle(
-                                                      fontSize: 6,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                            Container(
-                                              width: 120,
-                                              height: 110,
-                                              padding: const EdgeInsets.only(
-                                                top: 8,
-                                              ),
-                                              child: Column(
-                                                children: [
-                                                  Container(
-                                                    width: 70,
-                                                    height: 70,
-                                                    decoration: BoxDecoration(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              35),
-                                                      border: Border.all(
-                                                        color: Colors.red,
-                                                        width: 2,
-                                                      ),
-                                                    ),
-                                                    child: const Center(
-                                                      child: Text(
-                                                        "956RB",
-                                                        style: TextStyle(
-                                                          fontSize: 16,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  const SizedBox(height: 4),
-                                                  const Text(
-                                                    "Total Penerima Bantuan",
-                                                    textAlign: TextAlign.center,
-                                                    style: TextStyle(
-                                                      fontSize: 6,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ],
+                                        SizedBox(height: 4),
+                                        KeteranganPieChart(
+                                          label: "Total Masyarakat Layak",
+                                          color: Color(0xff5388D8),
+                                        ),
+                                        SizedBox(height: 4),
+                                        KeteranganPieChart(
+                                          label: "Estimasi Kuantitas",
+                                          color: Color(0xffF4BE37),
+                                        ),
+                                        SizedBox(height: 4),
+                                        KeteranganPieChart(
+                                          label: "Total Estimasi Layak",
+                                          color: Color(0xffFF9F40),
                                         ),
                                       ],
                                     ),
-                                  )
+                                  ),
                                 ],
                               ),
                             ),
