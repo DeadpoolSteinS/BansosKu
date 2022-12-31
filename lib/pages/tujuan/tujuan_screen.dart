@@ -4,7 +4,10 @@ import 'package:bansosku/common/custom_textfield4.dart';
 import 'package:bansosku/constants/my_colors.dart';
 import 'package:bansosku/models/tujuan.dart';
 import 'package:bansosku/pages/alamat/alamat_screen.dart';
+import 'package:bansosku/provider/penyalur.dart';
 import 'package:flutter/material.dart';
+
+import 'package:provider/provider.dart';
 
 class TujuanScreen extends StatefulWidget {
   static const String routeName = '/tujuan-bansos';
@@ -20,9 +23,9 @@ class _TujuanScreenState extends State<TujuanScreen> {
   final TextEditingController temaController = TextEditingController();
   final TextEditingController jargonController = TextEditingController();
 
-  late Tujuan tujuan;
+  late Tujuan? tujuan;
 
-  void setTujuanData() {
+  void setTujuanData(BuildContext context) {
     setState(() {
       tujuan = Tujuan(
         tujuan: tujuanController.text,
@@ -30,11 +33,16 @@ class _TujuanScreenState extends State<TujuanScreen> {
         tema: temaController.text,
         jargon: jargonController.text,
       );
+      // Provider.of<Penyalur>(context).setAllTujuan(tujuan!);
+      // final pp = Provider.of<Penyalur>(context);
+      // print(pp.alltujuan.pesan);
+      // //print(tujuan!.pesan);
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    final pp = Provider.of<Penyalur>(context);
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -102,7 +110,9 @@ class _TujuanScreenState extends State<TujuanScreen> {
                     const SizedBox(height: 16),
                     CustomButton2(
                       onTap: () {
-                        setTujuanData();
+                        setTujuanData(context);
+                        pp.setAllTujuan(tujuan!);
+                        //print(pp.allTujuan.pesan);
                         Navigator.pushNamed(
                           context,
                           AlamatScreen.routeName,

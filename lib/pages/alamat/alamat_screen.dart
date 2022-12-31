@@ -8,8 +8,13 @@ import 'package:bansosku/models/tujuan.dart';
 import 'package:bansosku/pages/detail_bansos/detail_bansos_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'package:provider/provider.dart';
+
+import 'package:bansosku/provider/penyalur.dart';
+
 class AlamatScreen extends StatefulWidget {
   static const String routeName = '/alamat-bansos';
+
   final Tujuan tujuan;
 
   const AlamatScreen({
@@ -42,6 +47,8 @@ class _AlamatScreenState extends State<AlamatScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final pp = Provider.of<Penyalur>(context);
+    //print(pp.allTujuan.pesan);
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -114,6 +121,7 @@ class _AlamatScreenState extends State<AlamatScreen> {
                     CustomButton2(
                       onTap: () {
                         setAlamatData();
+                        pp.setAllAlamat(alamat);
                         Navigator.pushNamed(
                           context,
                           DetailBansosScreen.routeName,

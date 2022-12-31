@@ -1,10 +1,16 @@
 import 'package:bansosku/common/custom_appbar.dart';
 import 'package:bansosku/common/custom_button2.dart';
 import 'package:bansosku/constants/my_colors.dart';
+import 'package:bansosku/models/alamat.dart';
+import 'package:bansosku/models/product.dart';
 import 'package:bansosku/pages/bansos_diajukan/success_page_screen.dart';
 import 'package:bansosku/pages/hasil_salurkan/components/list_hasil_salurkan.dart';
 import 'package:bansosku/pages/hasil_salurkan/hasli_salurkan_service.dart';
 import 'package:flutter/material.dart';
+
+import 'package:provider/provider.dart';
+
+import 'package:bansosku/provider/penyalur.dart';
 
 class HasilSalurkanScreen extends StatefulWidget {
   static const String routeName = '/hasil-salurkan';
@@ -36,30 +42,34 @@ class _HasilSalurkanScreenState extends State<HasilSalurkanScreen> {
     }
   }
 
-  void addAlamat() {
+  void addAlamat(Alamat alamat) {
     services.addAlamat(
       context: context,
-      provinsi: widget.data[1].provinsi,
-      kota: widget.data[1].kota,
-      kecamatan: widget.data[1].kecamatan,
-      desa: widget.data[1].desa,
+      provinsi: alamat.provinsi,
+      kota: alamat.kota,
+      kecamatan: alamat.kecamatan,
+      desa: alamat.desa,
     );
+    print("ini di hasil salurkan screen");
+    print(alamat.provinsi);
   }
 
-  void addProduct() {
-    for (int i = 0; i < widget.data[2].length; i++) {
+  void addProduct(List<Product> product) {
+    for (int i = 0; i < product.length; i++) {
       services.addProduct(
         context: context,
-        jenis: widget.data[2][i].jenis,
-        merk: widget.data[2][i].merk,
-        satuan: widget.data[2][i].satuan,
-        kuantitas: widget.data[2][i].kuantitas,
+        jenis: product[i].jenis,
+        merk: product[i].merk,
+        satuan: product[i].satuan,
+        kuantitas: product[i].kuantitas,
       );
+      print(product[i].jenis);
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    final pp = Provider.of<Penyalur>(context);
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -471,8 +481,8 @@ class _HasilSalurkanScreenState extends State<HasilSalurkanScreen> {
                     ),
                     CustomButton2(
                       onTap: () {
-                        addAlamat();
-                        addProduct();
+                        addAlamat(pp.getAllAlamat());
+                        addProduct(pp.getAllProduct());
                         Navigator.pushNamed(
                           context,
                           SuccessPageScreen.routeName,

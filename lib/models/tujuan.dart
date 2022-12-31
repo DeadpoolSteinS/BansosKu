@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 class Tujuan {
-  final String tujuan;
-  final String pesan;
-  final String tema;
-  final String jargon;
+  final String? tujuan;
+  final String? pesan;
+  final String? tema;
+  final String? jargon;
   Tujuan({
     required this.tujuan,
     required this.pesan,

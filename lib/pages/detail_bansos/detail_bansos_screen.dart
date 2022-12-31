@@ -6,6 +6,10 @@ import 'package:bansosku/models/product.dart';
 import 'package:bansosku/pages/hasil_salurkan/hasil_salurkan_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'package:provider/provider.dart';
+
+import 'package:bansosku/provider/penyalur.dart';
+
 class DetailBansosScreen extends StatefulWidget {
   static const String routeName = '/detail-bansos';
   final List<dynamic> data;
@@ -35,6 +39,8 @@ class _DetailBansosScreenState extends State<DetailBansosScreen> {
         satuan: satuanController.text,
         kuantitas: kuantitasController.text,
       ));
+
+      //print(products);
     });
     jenisController.clear();
     merkController.clear();
@@ -44,6 +50,8 @@ class _DetailBansosScreenState extends State<DetailBansosScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final pp = Provider.of<Penyalur>(context);
+
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -133,6 +141,11 @@ class _DetailBansosScreenState extends State<DetailBansosScreen> {
                     CustomButton2(
                       onTap: () {
                         widget.data.add(products);
+                        //print(widget.data);
+                        pp.addAllProduct(products);
+
+                        print("ini di detail bansosn screen");
+                        pp.printAllProduct();
                         Navigator.pushNamed(
                           context,
                           HasilSalurkanScreen.routeName,
