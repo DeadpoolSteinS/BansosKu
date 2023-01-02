@@ -34,11 +34,11 @@ class _DetailBansosScreenState extends State<DetailBansosScreen> {
   void setProductData() {
     setState(() {
       products.add(Product(
-        jenis: jenisController.text,
-        merk: merkController.text,
-        satuan: satuanController.text,
-        kuantitas: kuantitasController.text,
-      ));
+          jenis: jenisController.text,
+          merk: merkController.text,
+          satuan: satuanController.text,
+          kuantitas: kuantitasController.text,
+          userid: 'dummy'));
 
       //print(products);
     });

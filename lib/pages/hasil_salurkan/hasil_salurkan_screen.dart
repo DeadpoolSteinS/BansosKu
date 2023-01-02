@@ -9,6 +9,7 @@ import 'package:bansosku/pages/hasil_salurkan/components/keterangan_pie_chart.da
 import 'package:bansosku/pages/hasil_salurkan/components/list_hasil_salurkan.dart';
 import 'package:bansosku/pages/hasil_salurkan/hasli_salurkan_service.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:provider/provider.dart';
 
@@ -37,11 +38,18 @@ class _HasilSalurkanScreenState extends State<HasilSalurkanScreen> {
   }
 
   int total = 0;
+  String? userid;
 
   void setTotalPacs() {
     for (int i = 0; i < widget.data[2].length; i++) {
       total += int.parse(widget.data[2][i].kuantitas);
     }
+  }
+
+  void getUserId() async {
+    final prefs = await SharedPreferences.getInstance();
+    final String? action = prefs.getString("userid");
+    userid = action;
   }
 
   void addAlamat(Alamat alamat) {
@@ -51,9 +59,10 @@ class _HasilSalurkanScreenState extends State<HasilSalurkanScreen> {
       kota: alamat.kota,
       kecamatan: alamat.kecamatan,
       desa: alamat.desa,
+      userid: userid!,
     );
-    print("ini di hasil salurkan screen");
-    print(alamat.provinsi);
+    // print("ini di hasil salurkan screen");
+    // print(alamat.provinsi);
   }
 
   void addProduct(List<Product> product) {
@@ -64,8 +73,9 @@ class _HasilSalurkanScreenState extends State<HasilSalurkanScreen> {
         merk: product[i].merk,
         satuan: product[i].satuan,
         kuantitas: product[i].kuantitas,
+        userid: userid!,
       );
-      print(product[i].jenis);
+      // print(product[i].jenis);
     }
   }
 
@@ -320,6 +330,7 @@ class _HasilSalurkanScreenState extends State<HasilSalurkanScreen> {
                     ),
                     CustomButton2(
                       onTap: () {
+                        getUserId();
                         addAlamat(pp.getAllAlamat());
                         addProduct(pp.getAllProduct());
                         Navigator.pushNamed(

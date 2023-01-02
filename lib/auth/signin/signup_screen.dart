@@ -1,11 +1,41 @@
+import 'package:bansosku/auth/signin/signin_screen.dart';
+
+import 'package:bansosku/utils/sp.dart';
+import 'package:bansosku/auth/signin/authservice.dart';
+import 'package:bansosku/bottom_bar.dart';
 import 'package:bansosku/common/custom_button.dart';
 import 'package:bansosku/common/custom_textfield.dart';
+import 'package:bansosku/common/custom_textfield4.dart';
+import 'package:bansosku/common/custom_textfield6.dart';
 import 'package:bansosku/constants/my_colors.dart';
+import 'package:bansosku/models/user.dart';
 import 'package:flutter/material.dart';
 
-class SignupScreen extends StatelessWidget {
+class SignupScreen extends StatefulWidget {
   static const String routeName = '/signup';
   const SignupScreen({super.key});
+
+  @override
+  State<SignupScreen> createState() => _SigninScreenState();
+}
+
+class _SigninScreenState extends State<SignupScreen> {
+  final TextEditingController emailcontroller = TextEditingController();
+  final TextEditingController passwordcontroller = TextEditingController();
+
+  final AuthService services = AuthService();
+
+  final DataUserLocaly savedatauserlocaly = DataUserLocaly();
+  // var email, password, token;
+  late User? user;
+  void setDaftarnData() {
+    setState(() {
+      user = User(
+          email: emailcontroller.text,
+          password: passwordcontroller.text,
+          user_type: "penyalur");
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +50,7 @@ class SignupScreen extends StatelessWidget {
             ),
             child: Container(
               margin: EdgeInsets.only(
-                top: MediaQuery.of(context).size.height / 2 - 340,
+                top: MediaQuery.of(context).size.height / 2 - 300,
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -28,7 +58,7 @@ class SignupScreen extends StatelessWidget {
                   Column(
                     children: const [
                       Text(
-                        'Buat Akun',
+                        'Daftar',
                         style: TextStyle(
                           color: MyColors.primaryGreen,
                           fontSize: 32,
@@ -36,79 +66,76 @@ class SignupScreen extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'Pantau bansosmu mulai hari ini',
+                        'Selamat datang kembali',
                         style: TextStyle(
                           color: MyColors.primaryGreen,
                         ),
                       ),
                     ],
                   ),
-                  const SizedBox(height: 32),
-                  const CustomTextfield(
-                    label: "Email",
-                    hint: "johndoe@bansosku.co.id",
-                  ),
-                  const SizedBox(height: 12),
-                  const CustomTextfield(
-                    label: "No. Handphone",
-                    hint: "081237422327",
-                  ),
-                  const SizedBox(height: 12),
-                  const CustomTextfield(
-                    label: "Password",
-                    hint: "********",
-                  ),
-                  const SizedBox(height: 12),
-                  const CustomTextfield(
-                    label: "Konfirmasi Password",
-                    hint: "********",
-                  ),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 56),
                   Row(
                     children: [
-                      SizedBox(
-                        width: 24,
-                        height: 24,
-                        child: Checkbox(
-                          value: true,
-                          onChanged: (val) {},
-                          fillColor: MaterialStateProperty.all(
-                            MyColors.primaryGreen,
+                      CustomButton(
+                        width:
+                            (MediaQuery.of(context).size.width - 64) / 2 - 10,
+                        onTap: () {},
+                        child: const Text(
+                          'Email',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
                       ),
-                      const SizedBox(width: 8),
-                      RichText(
-                        text: const TextSpan(
-                          text: "Saya setuju dengan ",
+                      const SizedBox(width: 20),
+                      CustomButton(
+                        width:
+                            (MediaQuery.of(context).size.width - 64) / 2 - 10,
+                        bgColor: Colors.white,
+                        onTap: () {},
+                        child: const Text(
+                          'No. Handphone',
                           style: TextStyle(
                             color: MyColors.primaryGreen,
+                            fontWeight: FontWeight.w500,
                           ),
-                          children: [
-                            TextSpan(
-                              text: "Syarat",
-                              style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            TextSpan(
-                              text: " dan ",
-                            ),
-                            TextSpan(
-                              text: "Ketentuan",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
                         ),
                       ),
                     ],
                   ),
-                  const SizedBox(height: 32),
+                  const SizedBox(height: 20),
+                  CustomTextfield4(
+                    textEditingController: emailcontroller,
+                    label: "Email",
+                    hint: "johndoe@bansosku.co.id",
+                  ),
+                  const SizedBox(height: 12),
+                  CustomTextfield6(
+                    textEditingController: passwordcontroller,
+                    label: "Password",
+                    hint: "********",
+                  ),
+                  const SizedBox(height: 44),
                   CustomButton(
-                    onTap: () {},
+                    onTap: () {
+                      setDaftarnData();
+                      services.addUser(user!).then((val) async {
+                        print("ini data userid" + val.data['userid']);
+                        savedatauserlocaly.settoken(val.data['token']);
+                        savedatauserlocaly.setuserid(val.data['userid']);
+
+                        print("selesai ngeset token");
+                        //var tes = await savetoken.gettoken();
+                        //var tes = await UserSecureStorage.getToken();
+                        //print("ini token" + tes!);
+                      });
+                      Navigator.pushNamedAndRemoveUntil(
+                        context,
+                        BottomBar.routeName,
+                        (route) => false,
+                      );
+                    },
                     child: const Text(
                       'Daftar',
                       style: TextStyle(
@@ -130,6 +157,10 @@ class SignupScreen extends StatelessWidget {
                       const SizedBox(width: 4),
                       InkWell(
                         onTap: () {
+                          // Navigator.pushNamed(
+                          //   context,
+                          //   SigninScreen.routeName,
+                          // );
                           Navigator.pop(context);
                         },
                         child: const Text(

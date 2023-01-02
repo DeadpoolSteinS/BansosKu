@@ -1,13 +1,41 @@
 import 'package:bansosku/auth/signin/signup_screen.dart';
+import 'package:bansosku/auth/signin/authservice.dart';
 import 'package:bansosku/bottom_bar.dart';
 import 'package:bansosku/common/custom_button.dart';
 import 'package:bansosku/common/custom_textfield.dart';
+
+import 'package:bansosku/utils/user_secure_storage.dart';
+import 'package:bansosku/utils/sp.dart';
+import 'package:bansosku/common/custom_textfield4.dart';
+import 'package:bansosku/common/custom_textfield6.dart';
 import 'package:bansosku/constants/my_colors.dart';
+import 'package:bansosku/models/user.dart';
 import 'package:flutter/material.dart';
 
-class SigninScreen extends StatelessWidget {
+class SigninScreen extends StatefulWidget {
   static const String routeName = '/signin';
   const SigninScreen({super.key});
+
+  @override
+  State<SigninScreen> createState() => _SigninScreenState();
+}
+
+class _SigninScreenState extends State<SigninScreen> {
+  final TextEditingController emailcontroller = TextEditingController();
+  final TextEditingController passwordcontroller = TextEditingController();
+
+  final AuthService services = AuthService();
+  final DataUserLocaly savedatauserlocaly = DataUserLocaly();
+  // var email, password, token;
+  late User? user;
+  void setLoginData() {
+    setState(() {
+      user = User(
+          email: emailcontroller.text,
+          password: passwordcontroller.text,
+          user_type: "penyalur");
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -77,18 +105,42 @@ class SigninScreen extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 20),
-                  const CustomTextfield(
+                  CustomTextfield4(
+                    textEditingController: emailcontroller,
                     label: "Email",
                     hint: "johndoe@bansosku.co.id",
                   ),
                   const SizedBox(height: 12),
-                  const CustomTextfield(
+                  CustomTextfield6(
+                    textEditingController: passwordcontroller,
                     label: "Password",
                     hint: "********",
                   ),
                   const SizedBox(height: 44),
                   CustomButton(
                     onTap: () {
+                      setLoginData();
+                      // AuthService().login(user!).then((val) async {
+                      //   print("ini data token" + val.data['token']);
+                      //   await UserSecureStorage.setToken(val.data['token']);
+                      //   var tes = await UserSecureStorage.getToken();
+                      //   print("ini token" + tes!);
+                      // });
+                      services.login(user!).then((val) async {
+                        print("ini data userid" + val.data['userid']);
+                        savedatauserlocaly.settoken(val.data['token']);
+                        savedatauserlocaly.setuserid(val.data['userid']);
+
+                        print("selesai ngeset token");
+                        //var tes = await savetoken.gettoken();
+                        //var tes = await UserSecureStorage.getToken();
+                        //print("ini token" + tes!);
+                      });
+
+                      // AuthService().login(user!).then((val) {
+                      //   print("tes ini then");
+                      //   print("ini data token" + val.data['token']);
+                      // });
                       Navigator.pushNamedAndRemoveUntil(
                         context,
                         BottomBar.routeName,

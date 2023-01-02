@@ -37,11 +37,11 @@ class _AlamatScreenState extends State<AlamatScreen> {
   void setAlamatData() {
     setState(() {
       alamat = Alamat(
-        provinsi: provinsiController.text,
-        kota: kotaController.text,
-        kecamatan: kecamatanController.text,
-        desa: desaController.text,
-      );
+          provinsi: provinsiController.text,
+          kota: kotaController.text,
+          kecamatan: kecamatanController.text,
+          desa: desaController.text,
+          userid: "dummy");
     });
   }
 
