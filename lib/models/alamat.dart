@@ -5,11 +5,13 @@ class Alamat {
   final String kota;
   final String kecamatan;
   final String desa;
+  final String userid;
   Alamat({
     required this.provinsi,
     required this.kota,
     required this.kecamatan,
     required this.desa,
+    required this.userid,
   });
 
   Map<String, dynamic> toMap() {
@@ -18,6 +20,7 @@ class Alamat {
       'kota': kota,
       'kecamatan': kecamatan,
       'desa': desa,
+      'userid': userid,
     };
   }
 
@@ -27,6 +30,7 @@ class Alamat {
       kota: map['kota'],
       kecamatan: map['kecamatan'],
       desa: map['desa'],
+      userid: map['userid'],
     );
   }
 

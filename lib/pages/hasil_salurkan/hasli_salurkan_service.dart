@@ -12,14 +12,15 @@ class HasilSalurkanService {
     required String kota,
     required String kecamatan,
     required String desa,
+    required String userid,
   }) async {
     try {
       Alamat alamat = Alamat(
-        provinsi: provinsi,
-        kota: kota,
-        kecamatan: kecamatan,
-        desa: desa,
-      );
+          provinsi: provinsi,
+          kota: kota,
+          kecamatan: kecamatan,
+          desa: desa,
+          userid: userid);
 
       http.Response res = await http.post(
         Uri.parse('$uri/api/add-alamat'),
@@ -45,14 +46,15 @@ class HasilSalurkanService {
     required String merk,
     required String satuan,
     required String kuantitas,
+    required String userid,
   }) async {
     try {
       Product product = Product(
-        jenis: jenis,
-        merk: merk,
-        satuan: satuan,
-        kuantitas: kuantitas,
-      );
+          jenis: jenis,
+          merk: merk,
+          satuan: satuan,
+          kuantitas: kuantitas,
+          userid: userid);
 
       http.Response res = await http.post(
         Uri.parse('$uri/api/add-product'),

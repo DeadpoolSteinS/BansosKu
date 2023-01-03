@@ -5,11 +5,14 @@ class Product {
   final String merk;
   final String satuan;
   final String kuantitas;
+  final String userid;
+
   Product({
     required this.jenis,
     required this.merk,
     required this.satuan,
     required this.kuantitas,
+    required this.userid,
   });
 
   Map<String, dynamic> toMap() {
@@ -18,6 +21,7 @@ class Product {
       'merk': merk,
       'satuan': satuan,
       'kuantitas': kuantitas,
+      'userid': userid,
     };
   }
 
@@ -27,6 +31,7 @@ class Product {
       merk: map['merk'],
       satuan: map['satuan'],
       kuantitas: map['kuantitas'],
+      userid: map['userid'],
     );
   }
 
