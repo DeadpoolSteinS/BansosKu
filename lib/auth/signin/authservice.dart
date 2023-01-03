@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:bansosku/constants/my_env.dart';
 import 'package:bansosku/models/user.dart';
+import 'package:flutter/material.dart';
 
 class AuthService {
   Dio dio = Dio();
@@ -11,11 +12,11 @@ class AuthService {
           data: {
             "name": user.email,
             "password": user.password,
-            "user_type": user.user_type
+            "userType": user.userType
           },
           options: Options(contentType: Headers.formUrlEncodedContentType));
     } on DioError catch (e) {
-      print(e);
+      debugPrint(e.message);
     }
   }
 
@@ -25,11 +26,11 @@ class AuthService {
           data: {
             "name": user.email,
             "password": user.password,
-            "user_type": user.user_type
+            "userType": user.userType
           },
           options: Options(contentType: Headers.formUrlEncodedContentType));
     } on DioError catch (e) {
-      print(e);
+      debugPrint(e.message);
     }
   }
 }

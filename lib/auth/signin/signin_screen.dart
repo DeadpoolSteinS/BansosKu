@@ -2,9 +2,6 @@ import 'package:bansosku/auth/signin/signup_screen.dart';
 import 'package:bansosku/auth/signin/authservice.dart';
 import 'package:bansosku/bottom_bar.dart';
 import 'package:bansosku/common/custom_button.dart';
-import 'package:bansosku/common/custom_textfield.dart';
-
-import 'package:bansosku/utils/user_secure_storage.dart';
 import 'package:bansosku/utils/sp.dart';
 import 'package:bansosku/common/custom_textfield4.dart';
 import 'package:bansosku/common/custom_textfield6.dart';
@@ -33,7 +30,7 @@ class _SigninScreenState extends State<SigninScreen> {
       user = User(
           email: emailcontroller.text,
           password: passwordcontroller.text,
-          user_type: "penyalur");
+          userType: "penyalur");
     });
   }
 
@@ -127,11 +124,11 @@ class _SigninScreenState extends State<SigninScreen> {
                       //   print("ini token" + tes!);
                       // });
                       services.login(user!).then((val) async {
-                        print("ini data userid" + val.data['userid']);
+                        debugPrint('ini data userid ${val.data['userid']}');
                         savedatauserlocaly.settoken(val.data['token']);
                         savedatauserlocaly.setuserid(val.data['userid']);
 
-                        print("selesai ngeset token");
+                        debugPrint("selesai ngeset token");
                         //var tes = await savetoken.gettoken();
                         //var tes = await UserSecureStorage.getToken();
                         //print("ini token" + tes!);
