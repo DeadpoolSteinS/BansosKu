@@ -52,8 +52,6 @@ class _HasilSalurkanScreenState extends State<HasilSalurkanScreen> {
       kecamatan: alamat.kecamatan,
       desa: alamat.desa,
     );
-    print("ini di hasil salurkan screen");
-    print(alamat.provinsi);
   }
 
   void addProduct(List<Product> product) {
@@ -65,7 +63,6 @@ class _HasilSalurkanScreenState extends State<HasilSalurkanScreen> {
         satuan: product[i].satuan,
         kuantitas: product[i].kuantitas,
       );
-      print(product[i].jenis);
     }
   }
 

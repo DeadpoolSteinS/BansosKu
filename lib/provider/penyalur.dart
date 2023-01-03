@@ -1,10 +1,7 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 
 import '../models/tujuan.dart';
-
 import '../models/product.dart';
-
 import '../models/alamat.dart';
 
 class Penyalur with ChangeNotifier {
@@ -28,19 +25,6 @@ class Penyalur with ChangeNotifier {
   void addAllProduct(List<Product> newProduct) {
     _allProduct = newProduct;
     notifyListeners();
-  }
-
-  void printAllProduct() {
-    for (int i = 0; i < _allProduct.length; i++) {
-      // services.addProduct(
-      //   context: context,
-      //   jenis: product[i].jenis,
-      //   merk: product[i].merk,
-      //   satuan: product[i].satuan,
-      //   kuantitas: product[i].kuantitas,
-      // );
-      print(_allProduct[i].jenis);
-    }
   }
 
   Alamat getAllAlamat() {

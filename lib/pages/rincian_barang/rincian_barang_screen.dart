@@ -1,5 +1,4 @@
 import 'package:bansosku/common/custom_button.dart';
-import 'package:bansosku/common/custom_textfield.dart';
 import 'package:bansosku/common/custom_textfield2.dart';
 import 'package:bansosku/constants/my_colors.dart';
 import 'package:bansosku/models/product.dart';

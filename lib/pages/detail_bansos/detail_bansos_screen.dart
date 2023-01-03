@@ -141,11 +141,8 @@ class _DetailBansosScreenState extends State<DetailBansosScreen> {
                     CustomButton2(
                       onTap: () {
                         widget.data.add(products);
-                        //print(widget.data);
                         pp.addAllProduct(products);
 
-                        print("ini di detail bansosn screen");
-                        pp.printAllProduct();
                         Navigator.pushNamed(
                           context,
                           HasilSalurkanScreen.routeName,
