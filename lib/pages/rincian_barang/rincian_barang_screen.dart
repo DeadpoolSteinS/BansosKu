@@ -2,7 +2,7 @@ import 'package:bansosku/common/custom_button.dart';
 import 'package:bansosku/common/custom_textfield.dart';
 import 'package:bansosku/common/custom_textfield2.dart';
 import 'package:bansosku/constants/my_colors.dart';
-import 'package:bansosku/models/product.dart';
+import 'package:bansosku/models/productanduser.dart';
 import 'package:bansosku/pages/rincian_barang/rincian_service.dart';
 import 'package:bansosku/pages/success/semoga_bermanfaat.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +16,7 @@ class RincianBarangScreen extends StatefulWidget {
 }
 
 class _RincianBarangScreenState extends State<RincianBarangScreen> {
-  List<Product> products = [];
+  List<UserProduct> products = [];
 
   final RincianService rincianService = RincianService();
 
@@ -33,6 +33,7 @@ class _RincianBarangScreenState extends State<RincianBarangScreen> {
 
   @override
   Widget build(BuildContext context) {
+    //print("ini rincian barang screen" + products[0].user.email!);
     double cardWidth = (MediaQuery.of(context).size.width - 128) / 3;
     return Scaffold(
       body: Stack(
@@ -197,6 +198,13 @@ class _RincianBarangScreenState extends State<RincianBarangScreen> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
+                                        Text(
+                                          products[index].user.email!,
+                                          style: const TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 12,
+                                          ),
+                                        ),
                                         Text(
                                           products[index].jenis,
                                           style: const TextStyle(

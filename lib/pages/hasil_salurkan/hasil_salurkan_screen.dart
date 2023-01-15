@@ -49,6 +49,8 @@ class _HasilSalurkanScreenState extends State<HasilSalurkanScreen> {
   void getUserId() async {
     final prefs = await SharedPreferences.getInstance();
     final String? action = prefs.getString("userid");
+    print("dibawah ini action");
+    print(action);
     userid = action;
   }
 
@@ -331,8 +333,13 @@ class _HasilSalurkanScreenState extends State<HasilSalurkanScreen> {
                     CustomButton2(
                       onTap: () {
                         getUserId();
+                        print("error1");
                         addAlamat(pp.getAllAlamat());
+
+                        print("error2");
                         addProduct(pp.getAllProduct());
+
+                        print("error3");
                         Navigator.pushNamed(
                           context,
                           SuccessPageScreen.routeName,

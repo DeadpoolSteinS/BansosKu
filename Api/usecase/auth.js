@@ -43,7 +43,7 @@ var functions = {
         } else {
           user.comparePassword(req.body.password, function (err, isMatch) {
             if (isMatch && !err) {
-              console.log("ini respon dari auth fungsi" + user._id.toString());
+              //console.log("ini respon dari auth fungsi" + user._id.toString());
               var token = jwt.encode(user, process.env.SECRET_KEY);
               res.json({
                 success: true,

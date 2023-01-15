@@ -2,15 +2,16 @@ import 'dart:convert';
 
 import 'package:bansosku/constants/my_env.dart';
 import 'package:bansosku/constants/my_tools.dart';
-import 'package:bansosku/models/product.dart';
+import 'package:bansosku/models/productanduser.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class RincianService {
-  Future<List<Product>> fetchAllProduct({
+  Future<List<UserProduct>> fetchAllProduct({
     required BuildContext context,
   }) async {
-    List<Product> products = [];
+    print("tes1");
+    List<UserProduct> products = [];
     try {
       http.Response res = await http.get(
         Uri.parse('$uri/api/products/'),
@@ -19,13 +20,18 @@ class RincianService {
         },
       );
 
+      print("tes2");
+      print(jsonDecode(res.body).length);
+
       httpErrorHandle(
         response: res,
         context: context,
         onSuccess: () {
+          print("tes onsucces");
           for (int i = 0; i < jsonDecode(res.body).length; i++) {
+            print("di looping");
             products.add(
-              Product.fromJson(
+              UserProduct.fromJson(
                 jsonEncode(
                   jsonDecode(res.body)[i],
                 ),
@@ -34,6 +40,7 @@ class RincianService {
           }
         },
       );
+      print(products[0].user.password);
     } catch (e) {
       showSnackBar(context, e.toString());
     }

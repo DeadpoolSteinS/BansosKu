@@ -7,10 +7,11 @@ const toId = mongoose.Types.ObjectId;
 
 alamatRouter.get("/api/alamats/", async (req, res) => {
   try {
-    const alamats = await Alamat.find({}).populate({
-      path: "user_id",
-      model: "User",
-    });
+    // const alamats = await Alamat.find({}).populate({
+    //   path: "user_id",
+    //   model: "User",
+    // });
+    const alamats = await Alamat.find({}).exec();
     //res.send("tes");
     res.json(alamats);
   } catch (e) {

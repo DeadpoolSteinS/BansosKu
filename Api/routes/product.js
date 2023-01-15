@@ -8,11 +8,11 @@ const toId = mongoose.Types.ObjectId;
 
 productRouter.get("/api/products/", async (req, res) => {
   try {
-    //const products = await Product.find({}).exec();
     const products = await Product.find({}).populate({
       path: "user_id",
       model: "User",
     });
+    // const products = await Product.find({}).exec();
 
     res.json(products);
   } catch (e) {

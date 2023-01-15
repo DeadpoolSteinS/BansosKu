@@ -144,8 +144,8 @@ class _DetailBansosScreenState extends State<DetailBansosScreen> {
                         //print(widget.data);
                         pp.addAllProduct(products);
 
-                        print("ini di detail bansosn screen");
-                        pp.printAllProduct();
+                        // print("ini di detail bansosn screen");
+                        // pp.printAllProduct();
                         Navigator.pushNamed(
                           context,
                           HasilSalurkanScreen.routeName,
