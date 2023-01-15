@@ -3,12 +3,12 @@ import 'dart:convert';
 class User {
   final String? email;
   final String? password;
-  final String? user_type;
+  final String? userType;
   // final String? jargon;
   User({
     required this.email,
     required this.password,
-    required this.user_type,
+    required this.userType,
     // required this.jargon,
   });
 
@@ -16,7 +16,7 @@ class User {
     return {
       'email': email,
       'password': password,
-      'user_type': user_type,
+      'userType': userType,
       // 'jargon': jargon,
     };
   }
@@ -26,7 +26,7 @@ class User {
     return User(
       email: map['name'],
       password: map['password'],
-      user_type: map['user_type'],
+      userType: map['userType'],
       // jargon: map['jargon'],
     );
   }
