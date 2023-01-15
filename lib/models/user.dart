@@ -22,8 +22,9 @@ class User {
   }
 
   factory User.fromMap(Map<String, dynamic> map) {
+    print("tes 5 ini di model user");
     return User(
-      email: map['email'],
+      email: map['name'],
       password: map['password'],
       userType: map['userType'],
       // jargon: map['jargon'],

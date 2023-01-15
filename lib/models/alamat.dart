@@ -5,7 +5,7 @@ class Alamat {
   final String kota;
   final String kecamatan;
   final String desa;
-  final String userid;
+  final String? userid;
   Alamat({
     required this.provinsi,
     required this.kota,
